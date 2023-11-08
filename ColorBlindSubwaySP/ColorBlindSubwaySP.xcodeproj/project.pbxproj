@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9182CA9F2AFC2995006DABBC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9182CA9E2AFC2995006DABBC /* MapView.swift */; };
+		9182CAA12AFC2A92006DABBC /* LineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9182CAA02AFC2A92006DABBC /* LineComponent.swift */; };
 		91B1488E2AF0265900A33854 /* ColorBlindSubwaySPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1488D2AF0265900A33854 /* ColorBlindSubwaySPApp.swift */; };
 		91B148902AF0265900A33854 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1488F2AF0265900A33854 /* ContentView.swift */; };
 		91B148922AF0265A00A33854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B148912AF0265A00A33854 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9182CA9E2AFC2995006DABBC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9182CAA02AFC2A92006DABBC /* LineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineComponent.swift; sourceTree = "<group>"; };
 		91B1488A2AF0265900A33854 /* ColorBlindSubwaySP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBlindSubwaySP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B1488D2AF0265900A33854 /* ColorBlindSubwaySPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindSubwaySPApp.swift; sourceTree = "<group>"; };
 		91B1488F2AF0265900A33854 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9182CA9C2AFC295D006DABBC /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9182CA9D2AFC2971006DABBC /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9182CA9D2AFC2971006DABBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9182CA9E2AFC2995006DABBC /* MapView.swift */,
+				9182CAA02AFC2A92006DABBC /* LineComponent.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		91B148812AF0265900A33854 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +115,7 @@
 		91B1488C2AF0265900A33854 /* ColorBlindSubwaySP */ = {
 			isa = PBXGroup;
 			children = (
+				9182CA9C2AFC295D006DABBC /* Map */,
 				91B148B72AF0266F00A33854 /* Essentials */,
 			);
 			path = ColorBlindSubwaySP;
@@ -266,6 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B148902AF0265900A33854 /* ContentView.swift in Sources */,
+				9182CAA12AFC2A92006DABBC /* LineComponent.swift in Sources */,
+				9182CA9F2AFC2995006DABBC /* MapView.swift in Sources */,
 				91B1488E2AF0265900A33854 /* ColorBlindSubwaySPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
