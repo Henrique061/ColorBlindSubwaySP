@@ -115,7 +115,3 @@ struct PinchToZoom: ViewModifier {
     }
 }
 
-//
-//#Preview {
-//    ImageModifier()
-//}

@@ -10,23 +10,71 @@ import SwiftUI
 
 struct HomeView: View {
     
-//    @State private var currentZoom = 0.0
-//    @State private var totalZoom = 1.0
-    
     var body: some View {
-        GeometryReader { geo in
-            Image("linha-prata")
-                .resizable()
-                .scaledToFill()
-                .frame(width: geo.size.width, height: geo.size.height)
-                .modifier(ImageModifier(contentSize: CGSize(width: geo.size.width, height: geo.size.height)))
-            
-            
-        }
-        
+        NavigationStack {
+            GeometryReader { geo in
+                Image("linha-prata")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geo.size.width, height: geo.size.height)
+                    .modifier(ImageModifier(contentSize: CGSize(width: geo.size.width, height: geo.size.height)))
+                
+                    .toolbar {
+                        ToolbarItemGroup(placement: .bottomBar) {
+                            Button {
+                                //que acao??
+                            } label: {
+                                VStack {
+                                    Image(systemName: "house.fill")
+                                    Text("Home")
+                                }
+                                
+                            }
+                            Button {
+                                //chamar a sheet
+                            } label: {
+                                VStack {
+                                    Image(systemName: "camera.filters")
+                                    Text("Filtros")
+                                }
+                                
+                            }
+                            Button {
+                                //chamar a sheet
+                            } label: {
+                                VStack {
+                                    Image(systemName: "scribble.variable")
+                                    Text("Cores")
+                                }
+                                
+                            }
+                            Button {
+                                //chamar a sheet
+                            } label: {
+                                VStack {
+                                    Image(systemName: "tram.circle.fill")
+                                    Text("Rotas")
+                                }
+                                
+                            }
+                            
+                            NavigationLink {
+                                InfoView()
+                            } label: {
+                                VStack {
+                                    Image(systemName: "info.circle")
+                                    Text("Infos")
+                                }
+                            }
+
+                        }
+                    }
+            }
+        } .accentColor(.black)
     }
 }
 
 #Preview {
     HomeView()
 }
+
