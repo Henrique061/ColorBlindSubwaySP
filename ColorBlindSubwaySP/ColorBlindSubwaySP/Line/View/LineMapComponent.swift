@@ -1,13 +1,13 @@
 //
-//  LineComponent.swift
+//  LineMapComponent.swift
 //  ColorBlindSubwaySP
 //
-//  Created by Henrique Assis on 08/11/23.
+//  Created by Henrique Assis on 09/11/23.
 //
 
 import SwiftUI
 
-struct LineComponent: View {
+struct LineMapComponent: View {
     let imageName: String
     let geometryProxy: GeometryProxy
     let initialScale: CGFloat
@@ -18,8 +18,8 @@ struct LineComponent: View {
     var body: some View {
         Image(imageName)
             .resizable()
-            .scaledToFill()
-            .scaleEffect(initialScale)
+            .scaledToFit()
+            .scaleEffect(1)
             .colorMultiply(lineColor)
             .position(x: geometryProxy.size.width * positionMultiplier.x, y: geometryProxy.size.height * positionMultiplier.y)
     }

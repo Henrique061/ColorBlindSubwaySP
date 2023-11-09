@@ -11,10 +11,7 @@ import SwiftUI
 struct ColorBlindSubwaySPApp: App {
     var body: some Scene {
         WindowGroup {
-            GeometryReader { geo in
-                MapView()
-                    .environment(\.screenSize, geo.size)
-            }
+            MapView()
         }
     }
 }
