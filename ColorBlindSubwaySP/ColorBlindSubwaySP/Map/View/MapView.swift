@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct MapView: View {
+    @State var color: Color = Color.blue
+    
     var body: some View {
-        GeometryReader { geo in
+        GeometryReader { proxy in
             ZStack {
-                Image("Rubi")
-                    .resizable()
-                    .scaledToFill()
-                    .colorMultiply(.red)
-                    .position(x: geo.size.width * 0.5, y: geo.size.height * 0.5)
+                LineComponent(
+                    imageName: "LinhaAzul",
+                    geometryProxy: proxy,
+                    initialScale: 0.3,
+                    positionMultiplier: .init(x: 0.33, y: 0.5),
+                    lineColor: $color
+                )
             }
-            .position(x: geo.size.width * 0.5, y: geo.size.height * 0.5)
+            //.position(x: proxy.size.width * 0.5, y: proxy.size.height * 0.5)
         }
         .aspectRatio(contentMode: .fill)
+        
+        ColorPicker("", selection: $color)
     }
 }
 
