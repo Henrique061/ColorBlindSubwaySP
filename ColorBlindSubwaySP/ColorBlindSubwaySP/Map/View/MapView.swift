@@ -42,22 +42,14 @@ struct MapView: View {
                     )
                 }
                 
-//                Image("LinhaAzul")
-//                    .resizable()
-//                    .scaledToFill()
-//                    .scaleEffect(0.3)
-//                    .colorMultiply(.blue)
-//                    .position(x: proxy.size.width * 0.8225, y: proxy.size.height * 0.5)
-//                    .rotationEffect(.degrees(90))
-//                    .zIndex(-1)
-                
                 Image("ConectorLuz")
                     .resizable()
                     .scaledToFill()
-                    .scaleEffect(0.015)
-                    .position(x: proxy.size.width * 0.4975, y: proxy.size.height * 0.37)
+                    .scaleEffect(0.017)
+                    .position(x: proxy.size.width * 0.502, y: proxy.size.height * 0.34)
             }
         }
+        //.background(Color(.black))
         .aspectRatio(contentMode: .fill)
         
         HStack {
