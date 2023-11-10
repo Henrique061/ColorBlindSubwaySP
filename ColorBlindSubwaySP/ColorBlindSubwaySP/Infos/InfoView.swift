@@ -11,7 +11,7 @@ struct InfoView: View {
 //    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 NavigationButton(image: "person", text: "Sobre", link: SobreView())
                 Spacer()
@@ -20,8 +20,12 @@ struct InfoView: View {
                 Spacer()
                     .frame(height: 20)
                 NavigationButton(image: "c.circle", text: "Direitos Autorais", link: DireitosView())
+                Spacer()
             }
+            
             .padding(20)
+            .padding(.top, 30)
+            
 //            .toolbar {
 //                ToolbarItem(placement: .principal) {
 //                    Text("Informações")
@@ -38,7 +42,7 @@ struct InfoView: View {
 //                    })
 //                }
 //            }
-        }
+//        }
         .navigationTitle("Informações")
     }
 }

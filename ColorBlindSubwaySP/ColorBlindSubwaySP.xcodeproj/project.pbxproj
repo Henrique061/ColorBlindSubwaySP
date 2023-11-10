@@ -308,11 +308,12 @@
 			};
 			buildConfigurationList = 91B148852AF0265900A33854 /* Build configuration list for PBXProject "ColorBlindSubwaySP" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 91B148812AF0265900A33854;
 			productRefGroup = 91B1488B2AF0265900A33854 /* Products */;
