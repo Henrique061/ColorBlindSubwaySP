@@ -42,18 +42,18 @@ struct LineMapModel : Codable, Hashable, Identifiable {
 
 extension LineMapModel {
     public static var lines: [LineMapModel] = [
-        LineMapModel(lineCase: .azul_1,      imageName: "LinhaAzul",      positionMultiplier:  .init(x: 0.595, y: 0.500)),
-        LineMapModel(lineCase: .amarela_4,   imageName: "LinhaAmarela",   positionMultiplier:  .init(x: 0.115, y: 0.545)),
-        LineMapModel(lineCase: .lilas_5,     imageName: "LinhaLilas",     positionMultiplier:  .init(x: 0.186, y: 0.937)),
-        LineMapModel(lineCase: .verde_2,     imageName: "LinhaVerde",     positionMultiplier:  .init(x: 0.494, y: 0.627)),
-        LineMapModel(lineCase: .vermelha_3,  imageName: "LinhaVermelha",  positionMultiplier:  .init(x: 0.700, y: 0.450)),
-        LineMapModel(lineCase: .rubi_7,      imageName: "LinhaRubi",      positionMultiplier:  .init(x: 0.138, y: 0.075)),
-        LineMapModel(lineCase: .diamante_8,  imageName: "LinhaDiamante",  positionMultiplier: .init(x: -0.016, y: 0.347)),
-//        LineMapModel(lineCase: .esmeralda_9, imageName: "LinhaEsmeralda", positionMultiplier: .init(x: 0.662, y: 0.462)),
-//        LineMapModel(lineCase: .turquesa_10, imageName: "LinhaTurquesa",  positionMultiplier: .init(x: 0.662, y: 0.462)),
-//        LineMapModel(lineCase: .coral_11,    imageName: "LinhaCoral",     positionMultiplier: .init(x: 0.662, y: 0.462)),
-//        LineMapModel(lineCase: .safira_12,   imageName: "LinhaSafira",    positionMultiplier: .init(x: 0.662, y: 0.462)),
-//        LineMapModel(lineCase: .jade_13,     imageName: "LinhaJade",      positionMultiplier: .init(x: 0.662, y: 0.462)),
-//        LineMapModel(lineCase: .prata_15,    imageName: "LinhaPrata",     positionMultiplier: .init(x: 0.662, y: 0.462))
+        LineMapModel(lineCase: .azul_1,      imageName: "LinhaAzul",      positionMultiplier:  .init(x: 0.595,  y: 0.500)),
+        LineMapModel(lineCase: .esmeralda_9, imageName: "LinhaEsmeralda", positionMultiplier:  .init(x: 0.020,  y: 0.822)),
+        LineMapModel(lineCase: .amarela_4,   imageName: "LinhaAmarela",   positionMultiplier:  .init(x: 0.115,  y: 0.545)),
+        LineMapModel(lineCase: .lilas_5,     imageName: "LinhaLilas",     positionMultiplier:  .init(x: 0.186,  y: 0.937)),
+        LineMapModel(lineCase: .verde_2,     imageName: "LinhaVerde",     positionMultiplier:  .init(x: 0.494,  y: 0.627)),
+        LineMapModel(lineCase: .vermelha_3,  imageName: "LinhaVermelha",  positionMultiplier:  .init(x: 0.700,  y: 0.450)),
+        LineMapModel(lineCase: .rubi_7,      imageName: "LinhaRubi",      positionMultiplier:  .init(x: 0.138,  y: 0.075)),
+        LineMapModel(lineCase: .diamante_8,  imageName: "LinhaDiamante",  positionMultiplier: .init(x: -0.016,  y: 0.347)),
+        LineMapModel(lineCase: .turquesa_10, imageName: "LinhaTurquesa",  positionMultiplier:  .init(x: 0.9325, y: 0.673)),
+        LineMapModel(lineCase: .coral_11,    imageName: "LinhaCoral",     positionMultiplier:  .init(x: 0.994,  y: 0.404)),
+        LineMapModel(lineCase: .safira_12,   imageName: "LinhaSafira",    positionMultiplier:  .init(x: 0.985,  y: 0.2425)),
+        LineMapModel(lineCase: .jade_13,     imageName: "LinhaJade",      positionMultiplier:  .init(x: 1.045,  y: 0.050)),
+        LineMapModel(lineCase: .prata_15,    imageName: "LinhaPrata",     positionMultiplier:  .init(x: 1.125,  y: 0.555))
     ]
 }

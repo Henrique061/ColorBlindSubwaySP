@@ -47,9 +47,15 @@ struct MapView: View {
                     .scaledToFill()
                     .scaleEffect(0.017)
                     .position(x: proxy.size.width * 0.502, y: proxy.size.height * 0.34)
+                
+                Image("ConectorBras")
+                    .resizable()
+                    .scaledToFill()
+                    .scaleEffect(0.017)
+                    .position(x: proxy.size.width * 0.629, y: proxy.size.height * 0.3995)
             }
         }
-        //.background(Color(.black))
+        .background(Color(.gray))
         .aspectRatio(contentMode: .fill)
         
         HStack {

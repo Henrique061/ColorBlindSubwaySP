@@ -12,6 +12,7 @@ struct ColorBlindSubwaySPApp: App {
     var body: some Scene {
         WindowGroup {
             MapView()
+                .scaleEffect(1)
         }
     }
 }
