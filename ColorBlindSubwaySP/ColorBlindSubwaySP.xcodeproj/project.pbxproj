@@ -14,6 +14,10 @@
 		91B1489F2AF0265A00A33854 /* ColorBlindSubwaySPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1489E2AF0265A00A33854 /* ColorBlindSubwaySPTests.swift */; };
 		91B148A92AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B148A82AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift */; };
 		91B148AB2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B148AA2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift */; };
+		A76607FF2AFDA2B600971717 /* SobreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76607FE2AFDA2B600971717 /* SobreView.swift */; };
+		A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76608012AFDA7A200971717 /* NavigationButton.swift */; };
+		A76608042AFDDDA800971717 /* PoliticaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76608032AFDDDA800971717 /* PoliticaView.swift */; };
+		A76608062AFDDDBB00971717 /* DireitosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76608052AFDDDBB00971717 /* DireitosView.swift */; };
 		D43688BF2AFD60AC00B90BB5 /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43688BE2AFD60AC00B90BB5 /* ImageModifier.swift */; };
 		D4DD2A092AFD736800C54920 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD2A082AFD736800C54920 /* UIColor+Extension.swift */; };
 		D4F4B7212AF9854300758975 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B7202AF9854300758975 /* HomeView.swift */; };
@@ -52,6 +56,10 @@
 		91B148A42AF0265A00A33854 /* ColorBlindSubwaySPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorBlindSubwaySPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B148A82AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindSubwaySPUITests.swift; sourceTree = "<group>"; };
 		91B148AA2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindSubwaySPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A76607FE2AFDA2B600971717 /* SobreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreView.swift; sourceTree = "<group>"; };
+		A76608012AFDA7A200971717 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		A76608032AFDDDA800971717 /* PoliticaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticaView.swift; sourceTree = "<group>"; };
+		A76608052AFDDDBB00971717 /* DireitosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DireitosView.swift; sourceTree = "<group>"; };
 		D43688BE2AFD60AC00B90BB5 /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
 		D4DD2A082AFD736800C54920 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D4F4B7202AF9854300758975 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -157,6 +165,14 @@
 			path = Essentials;
 			sourceTree = "<group>";
 		};
+		A76608002AFDA78200971717 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				A76608012AFDA7A200971717 /* NavigationButton.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		D4DD2A072AFD733100C54920 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +217,12 @@
 		D4F4B71F2AF9833E00758975 /* Infos */ = {
 			isa = PBXGroup;
 			children = (
+				A76608002AFDA78200971717 /* components */,
 				D4F4B72C2AFAA80600758975 /* InfoView.swift */,
 				D4F4B72E2AFAA81800758975 /* InfoComponent.swift */,
+				A76607FE2AFDA2B600971717 /* SobreView.swift */,
+				A76608032AFDDDA800971717 /* PoliticaView.swift */,
+				A76608052AFDDDBB00971717 /* DireitosView.swift */,
 			);
 			path = Infos;
 			sourceTree = "<group>";
@@ -340,13 +360,17 @@
 				D4F4B7272AFAA7D900758975 /* FilterView.swift in Sources */,
 				D4F4B7212AF9854300758975 /* HomeView.swift in Sources */,
 				91B148902AF0265900A33854 /* ContentView.swift in Sources */,
+				A76608042AFDDDA800971717 /* PoliticaView.swift in Sources */,
 				91B1488E2AF0265900A33854 /* ColorBlindSubwaySPApp.swift in Sources */,
 				D4F4B72B2AFAA7F900758975 /* RouteView.swift in Sources */,
 				D43688BF2AFD60AC00B90BB5 /* ImageModifier.swift in Sources */,
+				A76607FF2AFDA2B600971717 /* SobreView.swift in Sources */,
+				A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */,
 				D4F4B72F2AFAA81800758975 /* InfoComponent.swift in Sources */,
 				D4F4B7292AFAA7E800758975 /* ColorView.swift in Sources */,
 				D4F4B72D2AFAA80600758975 /* InfoView.swift in Sources */,
 				D4DD2A092AFD736800C54920 /* UIColor+Extension.swift in Sources */,
+				A76608062AFDDDBB00971717 /* DireitosView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

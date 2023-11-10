@@ -28,8 +28,9 @@ struct HomeView: View {
                                     Image(systemName: "house.fill")
                                     Text("Home")
                                 }
-                                
                             }
+                            Spacer()
+                                .frame(width: 5)
                             Button {
                                 //chamar a sheet
                             } label: {
@@ -37,8 +38,10 @@ struct HomeView: View {
                                     Image(systemName: "camera.filters")
                                     Text("Filtros")
                                 }
-                                
                             }
+                            Spacer()
+                                .frame(width: 5)
+                            
                             Button {
                                 //chamar a sheet
                             } label: {
@@ -46,8 +49,9 @@ struct HomeView: View {
                                     Image(systemName: "scribble.variable")
                                     Text("Cores")
                                 }
-                                
                             }
+                            Spacer()
+                                .frame(width: 5)
                             Button {
                                 //chamar a sheet
                             } label: {
@@ -55,9 +59,9 @@ struct HomeView: View {
                                     Image(systemName: "tram.circle.fill")
                                     Text("Rotas")
                                 }
-                                
                             }
-                            
+                            Spacer()
+                                .frame(width: 5)
                             NavigationLink {
                                 InfoView()
                             } label: {
@@ -66,7 +70,6 @@ struct HomeView: View {
                                     Text("Infos")
                                 }
                             }
-
                         }
                     }
             }
@@ -74,7 +77,11 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView()
+//#Preview {
+//    HomeView()
+//}
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
 }
-
