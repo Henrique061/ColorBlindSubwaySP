@@ -37,7 +37,6 @@ struct MapView: View {
                     LineMapComponent(
                         imageName: line.imageName,
                         geometryProxy: proxy,
-                        initialScale: line.initialScale,
                         positionMultiplier: line.positionMultiplier,
                         lineColor: bindingMapLine(for: line.lineCase)
                     )
