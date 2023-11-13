@@ -31,27 +31,30 @@ struct MapView: View {
     @State var selectedLine: LineCase = .azul_1
     
     var body: some View {
-        GeometryReader { proxy in
-            ZStack {
-                ForEach(LineMapModel.lines) { line in
-                    LineMapComponent(
-                        imageName: line.imageName,
-                        geometryProxy: proxy,
-                        positionMultiplier: line.positionMultiplier,
-                        lineColor: bindingMapLine(for: line.lineCase)
-                    )
-                }
-                
-                Image("ConectorLuz")
-                    .resizable()
-                    .scaledToFill()
-                    .scaleEffect(0.017)
-                    .position(x: proxy.size.width * 0.502, y: proxy.size.height * 0.34)
+            GeometryReader { proxy in
+                //ScrollView ([.horizontal, .vertical]) {
+                ZStack {
+                    ForEach(LineMapModel.lines) { line in
+                        LineMapComponent(
+                            imageName: line.imageName,
+                            geometryProxy: proxy,
+                            positionMultiplier: line.positionMultiplier,
+                            lineColor: bindingMapLine(for: line.lineCase)
+                        )
+                    }
+                    
+                    Image("ConectorLuz")
+                        .resizable()
+                        .scaledToFill()
+                        .scaleEffect(0.017)
+                        .position(x: proxy.size.width * 0.502, y: proxy.size.height * 0.34)
+                //}
             }
         }
         //.background(Color(.black))
-        .aspectRatio(contentMode: .fill)
-        
+            .aspectRatio(contentMode: .fit)
+    
+    
         HStack {
             Picker("Line", selection: $selectedLine) {
                 ForEach(LineCase.allCases) { lineCase in
@@ -61,6 +64,7 @@ struct MapView: View {
             ColorPicker("", selection: bindingMapLine(for: selectedLine))
         }
     }
+        
     
     private func bindingMapLine(for key: LineCase) -> Binding<Color> {
         return .init(

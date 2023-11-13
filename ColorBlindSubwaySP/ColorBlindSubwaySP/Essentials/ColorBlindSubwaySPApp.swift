@@ -11,7 +11,9 @@ import SwiftUI
 struct ColorBlindSubwaySPApp: App {
     var body: some Scene {
         WindowGroup {
-            MapView()
+            ScrollView([.horizontal, .vertical]) {
+                MapView()
+            }
         }
     }
 }
