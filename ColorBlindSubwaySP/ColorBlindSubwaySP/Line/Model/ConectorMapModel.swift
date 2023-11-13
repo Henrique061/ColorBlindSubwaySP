@@ -58,6 +58,6 @@ extension ConnectorMapModel {
         ConnectorMapModel(connectedLines: Set([.vermelha_3, .azul_1]),      positionMultiplier: .init(x: 0.5025, y: 0.459), rotation: 0),   // se
         ConnectorMapModel(connectedLines: Set([.safira_12, .jade_13]),      positionMultiplier: .init(x: 0.818,  y: 0.310), rotation: 135), // eng goulart
         ConnectorMapModel(connectedLines: Set([.safira_12, .coral_11]),     positionMultiplier: .init(x: 1.222,  y: 0.319), rotation: 0),   // calmon viana
-        ConnectorMapModel(connectedLines: Set([.coral_11, .vermelha_3]),    positionMultiplier: .init(x: 1.010,  y: 0.4005), rotation: 0)  // corinthians - itaquera
+        ConnectorMapModel(connectedLines: Set([.coral_11, .vermelha_3]),    positionMultiplier: .init(x: 1.010,  y: 0.4005), rotation: 0)   // corinthians - itaquera
     ]
 }
