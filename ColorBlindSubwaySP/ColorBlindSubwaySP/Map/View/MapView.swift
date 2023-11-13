@@ -53,7 +53,6 @@ struct MapView: View {
                 }
             }
         }
-        .background(Color(.gray))
         .aspectRatio(contentMode: .fill)
     }
     
