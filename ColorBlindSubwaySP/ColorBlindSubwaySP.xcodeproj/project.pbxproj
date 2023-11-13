@@ -19,6 +19,7 @@
 		91B1489F2AF0265A00A33854 /* ColorBlindSubwaySPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1489E2AF0265A00A33854 /* ColorBlindSubwaySPTests.swift */; };
 		91B148A92AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B148A82AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift */; };
 		91B148AB2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B148AA2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift */; };
+		91EE6B422B0297E500C1A7B6 /* ConnectorMapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE6B412B0297E500C1A7B6 /* ConnectorMapComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		91B148A42AF0265A00A33854 /* ColorBlindSubwaySPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorBlindSubwaySPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B148A82AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindSubwaySPUITests.swift; sourceTree = "<group>"; };
 		91B148AA2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindSubwaySPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91EE6B412B0297E500C1A7B6 /* ConnectorMapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorMapComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				911A00132AFD59B10010F869 /* LineMapComponent.swift */,
+				91EE6B412B0297E500C1A7B6 /* ConnectorMapComponent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				91B148902AF0265900A33854 /* ContentView.swift in Sources */,
 				911A00142AFD59B10010F869 /* LineMapComponent.swift in Sources */,
+				91EE6B422B0297E500C1A7B6 /* ConnectorMapComponent.swift in Sources */,
 				9182CA9F2AFC2995006DABBC /* MapView.swift in Sources */,
 				9145BF842AFECE0E00A1802B /* ConectorMapModel.swift in Sources */,
 				911A001B2AFD618D0010F869 /* ColorExtension.swift in Sources */,

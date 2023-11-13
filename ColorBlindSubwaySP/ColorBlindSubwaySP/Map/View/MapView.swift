@@ -28,11 +28,11 @@ struct MapView: View {
         return aux
     }()
     
-    @State var selectedLine: LineCase = .azul_1
-    
+    // - MARK: BODY
     var body: some View {
         GeometryReader { proxy in
             ZStack {
+                // LINES
                 ForEach(LineMapModel.lines) { line in
                     LineMapComponent(
                         imageName: line.imageName,
@@ -42,32 +42,23 @@ struct MapView: View {
                     )
                 }
                 
-                Image("ConectorLuz")
-                    .resizable()
-                    .scaledToFill()
-                    .scaleEffect(0.017)
-                    .position(x: proxy.size.width * 0.502, y: proxy.size.height * 0.34)
-                
-                Image("ConectorBras")
-                    .resizable()
-                    .scaledToFill()
-                    .scaleEffect(0.017)
-                    .position(x: proxy.size.width * 0.629, y: proxy.size.height * 0.3995)
+                // CONNECTORS
+                ForEach(ConnectorMapModel.connectors) { connector in
+                    ConnectorMapComponent(
+                        imageName: connector.imageName,
+                        geometryProxy: proxy,
+                        positionMultiplier: connector.positionMultiplier,
+                        rotation: connector.rotation
+                    )
+                }
             }
         }
         .background(Color(.gray))
         .aspectRatio(contentMode: .fill)
-        
-        HStack {
-            Picker("Line", selection: $selectedLine) {
-                ForEach(LineCase.allCases) { lineCase in
-                    Text(lineCase.rawValue)
-                }
-            }
-            ColorPicker("", selection: bindingMapLine(for: selectedLine))
-        }
     }
     
+    
+    //- MARK: FUNCTIONS
     private func bindingMapLine(for key: LineCase) -> Binding<Color> {
         return .init(
             get: { self.mapLines[key, default: .black] },

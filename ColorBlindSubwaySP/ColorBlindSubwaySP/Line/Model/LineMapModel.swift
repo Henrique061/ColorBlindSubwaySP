@@ -46,7 +46,7 @@ extension LineMapModel {
         LineMapModel(lineCase: .esmeralda_9, imageName: "LinhaEsmeralda", positionMultiplier:  .init(x: 0.020,  y: 0.822)),
         LineMapModel(lineCase: .amarela_4,   imageName: "LinhaAmarela",   positionMultiplier:  .init(x: 0.115,  y: 0.545)),
         LineMapModel(lineCase: .lilas_5,     imageName: "LinhaLilas",     positionMultiplier:  .init(x: 0.186,  y: 0.937)),
-        LineMapModel(lineCase: .verde_2,     imageName: "LinhaVerde",     positionMultiplier:  .init(x: 0.494,  y: 0.627)),
+        LineMapModel(lineCase: .verde_2,     imageName: "LinhaVerde",     positionMultiplier:  .init(x: 0.497,  y: 0.627)),
         LineMapModel(lineCase: .vermelha_3,  imageName: "LinhaVermelha",  positionMultiplier:  .init(x: 0.700,  y: 0.450)),
         LineMapModel(lineCase: .rubi_7,      imageName: "LinhaRubi",      positionMultiplier:  .init(x: 0.138,  y: 0.075)),
         LineMapModel(lineCase: .diamante_8,  imageName: "LinhaDiamante",  positionMultiplier: .init(x: -0.016,  y: 0.347)),
