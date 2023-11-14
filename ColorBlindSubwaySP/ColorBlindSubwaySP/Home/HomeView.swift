@@ -10,6 +10,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var showingSheet = false
+    
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
@@ -22,16 +24,6 @@ struct HomeView: View {
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button {
-                                //que acao??
-                            } label: {
-                                VStack {
-                                    Image(systemName: "house.fill")
-                                    Text("Home")
-                                }
-                            }
-                            Spacer()
-                                .frame(width: 5)
-                            Button {
                                 //chamar a sheet
                             } label: {
                                 VStack {
@@ -43,13 +35,16 @@ struct HomeView: View {
                                 .frame(width: 5)
                             
                             Button {
-                                //chamar a sheet
+                                showingSheet.toggle()
                             } label: {
                                 VStack {
                                     Image(systemName: "scribble.variable")
                                     Text("Cores")
                                 }
-                            }
+                            }.sheet(isPresented: $showingSheet, content: {
+                                ColorView()
+                                    .presentationDetents([.medium, .large])
+                            })
                             Spacer()
                                 .frame(width: 5)
                             Button {
@@ -73,7 +68,7 @@ struct HomeView: View {
                         }
                     }
             }
-        } .accentColor(.black)
+        } 
     }
 }
 
