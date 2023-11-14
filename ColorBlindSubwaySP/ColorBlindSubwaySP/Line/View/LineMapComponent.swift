@@ -13,6 +13,7 @@ struct LineMapComponent: View {
     let positionMultiplier: CGPoint
     
     @Binding var lineColor: Color
+    @Binding var lineOpacity: Double
     
     var body: some View {
         Image(imageName)
@@ -21,5 +22,6 @@ struct LineMapComponent: View {
             .colorMultiply(lineColor)
             .position(x: geometryProxy.size.width * positionMultiplier.x, y: geometryProxy.size.height * positionMultiplier.y)
             .scaleEffect(1)
+            .opacity(lineOpacity)
     }
 }

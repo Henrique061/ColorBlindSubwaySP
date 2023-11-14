@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MapView: View {
-    @State var mapLines: [LineCase: Color] = {
+    @State var linesColors: [LineCase: Color] = {
         var aux = [LineCase: Color]()
         
         aux[.azul_1]      = Color(hex: "00539F")
@@ -27,8 +27,21 @@ struct MapView: View {
         
         return aux
     }()
+    @State var linesOpacity: [LineCase: Double] = {
+        var aux = [LineCase: Double]()
+        
+        LineCase.allCases.forEach({ line in
+            aux[line] = Double(1)
+        })
+        
+        return aux
+    }()
+    @State var focusedLines: Set<LineCase> = Set()
     
-    // - MARK: BODY
+    @State var selectedLine: LineCase = .azul_1
+    @State var showFocusLineSheet: Bool = false
+    
+    //MARK: - BODY
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -38,8 +51,10 @@ struct MapView: View {
                         imageName: line.imageName,
                         geometryProxy: proxy,
                         positionMultiplier: line.positionMultiplier,
-                        lineColor: bindingMapLine(for: line.lineCase)
+                        lineColor: bindingLineColor(for: line.lineCase),
+                        lineOpacity: bindingLineOpacity(for: line.lineCase)
                     )
+                    .animation(.default, value: linesOpacity[line.lineCase])
                 }
                 
                 // CONNECTORS
@@ -54,14 +69,90 @@ struct MapView: View {
             }
         }
         .aspectRatio(contentMode: .fill)
+        .sheet(isPresented: $showFocusLineSheet,
+               content: {
+            FocusLineSheetPlaceholder(opacityAction: changeLineOpacity)
+        })
+        
+        Button {
+            showFocusLineSheet.toggle()
+        } label: {
+            Text("Opacity Sheet")
+        }
+        .background(.red)
+
     }
     
-    
-    //- MARK: FUNCTIONS
-    private func bindingMapLine(for key: LineCase) -> Binding<Color> {
+    //MARK: - BINDING GETTERS
+    private func bindingLineColor(for key: LineCase) -> Binding<Color> {
         return .init(
-            get: { self.mapLines[key, default: .black] },
-            set: { self.mapLines[key] = $0 }
+            get: { self.linesColors[key, default: .black] },
+            set: { self.linesColors[key] = $0 }
         )
+    }
+    
+    private func bindingLineOpacity(for key: LineCase) -> Binding<Double> {
+        return .init(
+            get: { self.linesOpacity[key, default: 1] },
+            set: { self.linesOpacity[key] = $0 }
+        )
+    }
+    
+    //MARK: - FUNCTIONS
+    private func changeLineOpacity(line: LineCase) {
+        // remove linha que estava em foco
+        if focusedLines.contains(line) {
+            focusedLines.remove(line)
+            linesOpacity[line] = 0
+            
+            // se nao tem mais nenhuma linha em foco, deixa todas com opacidade normal
+            if focusedLines.isEmpty { setAllLinesOpacity(to: 1) }
+        }
+        
+        // adiciona nova linha em foco
+        else {
+            // se nao tinha nenhuma linha em foco, deixa todas com opacidade em 0
+            if focusedLines.isEmpty { setAllLinesOpacity(to: 0) }
+            
+            focusedLines.insert(line)
+            linesOpacity[line] = 1
+        }
+    }
+    
+    private func setAllLinesOpacity(to value: Double) {
+        LineCase.allCases.forEach { line in
+            linesOpacity[line] = value
+        }
+    }
+}
+
+struct FocusLineSheetPlaceholder: View {
+    let opacityAction: (LineCase) -> Void
+    
+    @State var linesActives: [LineCase: Bool] = {
+        var aux = [LineCase: Bool]()
+        
+        LineCase.allCases.forEach { line in
+            aux[line] = false
+        }
+        
+        return aux
+    }()
+    
+    var body: some View {
+        List(LineCase.allCases) { line in
+            Button {
+                opacityAction(line)
+                linesActives[line]?.toggle()
+            } label: {
+                HStack {
+                    Text(line.rawValue)
+                    Spacer()
+                    if linesActives[line] ?? true {
+                        Image(systemName: "playstation.logo")
+                    }
+                }
+            }
+        }
     }
 }

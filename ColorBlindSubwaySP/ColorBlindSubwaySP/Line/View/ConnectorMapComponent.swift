@@ -13,13 +13,6 @@ struct ConnectorMapComponent: View {
     let positionMultiplier: CGPoint
     let rotation: CGFloat
     
-    init(imageName: String, geometryProxy: GeometryProxy, positionMultiplier: CGPoint, rotation: CGFloat) {
-        self.imageName = imageName
-        self.geometryProxy = geometryProxy
-        self.positionMultiplier = positionMultiplier
-        self.rotation = rotation
-    }
-    
     var body: some View {
         Image(imageName)
             .resizable()
