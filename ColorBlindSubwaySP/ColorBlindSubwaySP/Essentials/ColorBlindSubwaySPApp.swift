@@ -11,11 +11,7 @@ import SwiftUI
 struct ColorBlindSubwaySPApp: App {
     var body: some Scene {
         WindowGroup {
-            GeometryReader { proxy in
-                ContentView()
-                    .environment(\.screenSize, proxy.size)
-            }
-            .aspectRatio(contentMode: .fit)
+            MapView()
         }
     }
 }

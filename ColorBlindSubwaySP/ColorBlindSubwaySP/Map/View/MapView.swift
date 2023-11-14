@@ -41,7 +41,9 @@ struct MapView: View {
     @State var selectedLine: LineCase = .azul_1
     @State var showFocusLineSheet: Bool = false
     
-    //MARK: - BODY
+    @State var mapSize: CGSize = .init(width: 400, height: 400)
+    
+    // - MARK: BODY
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -67,20 +69,20 @@ struct MapView: View {
                     )
                 }
             }
+            .onAppear{self.mapSize = proxy.size}
         }
         .aspectRatio(contentMode: .fill)
         .sheet(isPresented: $showFocusLineSheet,
                content: {
             FocusLineSheetPlaceholder(opacityAction: changeLineOpacity)
         })
+        .modifier(ImageModifier(contentSize: $mapSize))
         
         Button {
             showFocusLineSheet.toggle()
         } label: {
             Text("Opacity Sheet")
         }
-        .background(.red)
-
     }
     
     //MARK: - BINDING GETTERS
