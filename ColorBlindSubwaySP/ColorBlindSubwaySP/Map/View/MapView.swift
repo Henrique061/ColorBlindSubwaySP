@@ -28,6 +28,8 @@ struct MapView: View {
         return aux
     }()
     
+    @State var mapSize: CGSize = .init(width: 400, height: 400)
+    
     // - MARK: BODY
     var body: some View {
         GeometryReader { proxy in
@@ -52,8 +54,10 @@ struct MapView: View {
                     )
                 }
             }
+            .onAppear{self.mapSize = proxy.size}
         }
         .aspectRatio(contentMode: .fill)
+        .modifier(ImageModifier(contentSize: $mapSize))
     }
     
     

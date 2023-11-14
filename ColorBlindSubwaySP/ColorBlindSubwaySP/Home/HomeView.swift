@@ -17,7 +17,7 @@ struct HomeView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: geo.size.width, height: geo.size.height)
-                    .modifier(ImageModifier(contentSize: CGSize(width: geo.size.width, height: geo.size.height)))
+                    //.modifier(ImageModifier(contentSize: CGSize(width: geo.size.width, height: geo.size.height)))
                 
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
