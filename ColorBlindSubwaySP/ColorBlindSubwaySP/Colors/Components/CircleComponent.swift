@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CircleComponent: View {
     
-    var circleType: CircleType
+    var circleType: LineCase
     
     var body: some View {
         

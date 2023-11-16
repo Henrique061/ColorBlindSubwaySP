@@ -78,11 +78,11 @@ struct MapView: View {
         })
         .modifier(ImageModifier(contentSize: $mapSize))
         
-        Button {
-            showFocusLineSheet.toggle()
-        } label: {
-            Text("Opacity Sheet")
-        }
+//        Button {
+//            showFocusLineSheet.toggle()
+//        } label: {
+//            Text("Opacity Sheet")
+//        }
     }
     
     //MARK: - BINDING GETTERS
@@ -148,7 +148,7 @@ struct FocusLineSheetPlaceholder: View {
                 linesActives[line]?.toggle()
             } label: {
                 HStack {
-                    Text(line.rawValue)
+                    Text(line.title)
                     Spacer()
                     if linesActives[line] ?? true {
                         Image(systemName: "playstation.logo")

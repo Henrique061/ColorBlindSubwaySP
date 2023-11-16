@@ -15,11 +15,8 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
-                Image("linha-prata")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: geo.size.width, height: geo.size.height)
-                    //.modifier(ImageModifier(contentSize: CGSize(width: geo.size.width, height: geo.size.height)))
+                MapView()
+//                InfoView()
                 
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
