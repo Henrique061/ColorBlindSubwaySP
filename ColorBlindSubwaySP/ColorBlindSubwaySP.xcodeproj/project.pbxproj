@@ -10,6 +10,7 @@
 		911A00142AFD59B10010F869 /* LineMapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A00132AFD59B10010F869 /* LineMapComponent.swift */; };
 		911A00172AFD5CD20010F869 /* LineMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A00162AFD5CD20010F869 /* LineMapModel.swift */; };
 		911A001B2AFD618D0010F869 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A001A2AFD618D0010F869 /* ColorExtension.swift */; };
+		91221E0A2B06983200CD14B6 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91221E092B06983200CD14B6 /* MapViewModel.swift */; };
 		9145BF842AFECE0E00A1802B /* ConectorMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145BF832AFECE0E00A1802B /* ConectorMapModel.swift */; };
 		9182CA9F2AFC2995006DABBC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9182CA9E2AFC2995006DABBC /* MapView.swift */; };
 		91B1488E2AF0265900A33854 /* ColorBlindSubwaySPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1488D2AF0265900A33854 /* ColorBlindSubwaySPApp.swift */; };
@@ -56,6 +57,7 @@
 		911A00132AFD59B10010F869 /* LineMapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineMapComponent.swift; sourceTree = "<group>"; };
 		911A00162AFD5CD20010F869 /* LineMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineMapModel.swift; sourceTree = "<group>"; };
 		911A001A2AFD618D0010F869 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		91221E092B06983200CD14B6 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		9145BF832AFECE0E00A1802B /* ConectorMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectorMapModel.swift; sourceTree = "<group>"; };
 		9182CA9E2AFC2995006DABBC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		91B1488A2AF0265900A33854 /* ColorBlindSubwaySP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBlindSubwaySP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,9 +154,18 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		91221E082B06981B00CD14B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91221E092B06983200CD14B6 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9182CA9C2AFC295D006DABBC /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				91221E082B06981B00CD14B6 /* ViewModel */,
 				9182CA9D2AFC2971006DABBC /* View */,
 			);
 			path = Map;
@@ -460,6 +471,7 @@
 				A76607FF2AFDA2B600971717 /* SobreView.swift in Sources */,
 				A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */,
 				D4F4B72F2AFAA81800758975 /* InfoComponent.swift in Sources */,
+				91221E0A2B06983200CD14B6 /* MapViewModel.swift in Sources */,
 				D4F4B7292AFAA7E800758975 /* ColorView.swift in Sources */,
 				D4F4B72D2AFAA80600758975 /* InfoView.swift in Sources */,
 				D4DD2A092AFD736800C54920 /* UIColor+Extension.swift in Sources */,
@@ -635,7 +647,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -666,7 +677,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -15,63 +15,37 @@ enum LineCase: CaseIterable, Codable, Hashable, Identifiable {
     
     var title: String {
         switch self {
-        case .azul_1:
-            return "1 - Azul"
-        case .verde_2:
-            return "2 - Verde"
-        case .vermelha_3:
-            return "3 - Vermelha"
-        case .amarela_4:
-            return "4 - Amarela"
-        case .lilas_5:
-            return "5 - Lilás"
-        case .rubi_7:
-            return "7 - Rubi"
-        case .diamante_8:
-            return "8 - Diadema"
-        case .esmeralda_9:
-            return "9 - Esmeralda"
-        case .turquesa_10:
-            return "10 - Turquesa"
-        case .coral_11:
-            return "11 - Coral"
-        case .safira_12:
-            return "12 - Safira"
-        case .jade_13:
-            return "13 - Jade"
-        case .prata_15:
-            return "15 - Prata"
+        case .azul_1:      return "1 - Azul"
+        case .verde_2:     return "2 - Verde"
+        case .vermelha_3:  return "3 - Vermelha"
+        case .amarela_4:   return "4 - Amarela"
+        case .lilas_5:     return "5 - Lilás"
+        case .rubi_7:      return "7 - Rubi"
+        case .diamante_8:  return "8 - Diadema"
+        case .esmeralda_9: return "9 - Esmeralda"
+        case .turquesa_10: return "10 - Turquesa"
+        case .coral_11:    return "11 - Coral"
+        case .safira_12:   return "12 - Safira"
+        case .jade_13:     return "13 - Jade"
+        case .prata_15:    return "15 - Prata"
         }
     }
     
     var color: Color {
         switch self {
-        case .azul_1:
-            return Color("azul")
-        case .verde_2:
-            return Color("verde")
-        case .vermelha_3:
-            return Color("vermelha")
-        case .amarela_4:
-            return Color("amarela")
-        case .lilas_5:
-            return Color("lilas")
-        case .rubi_7:
-            return Color("rubi")
-        case .diamante_8:
-            return Color("diamante")
-        case .esmeralda_9:
-            return Color("esmeralda")
-        case .turquesa_10:
-            return Color("turquesa")
-        case .coral_11:
-            return Color("coral")
-        case .safira_12:
-            return Color("safira")
-        case .jade_13:
-            return Color("jade")
-        case .prata_15:
-            return Color("prata")
+        case .azul_1:      return Color("azul")
+        case .verde_2:     return Color("verde")
+        case .vermelha_3:  return Color("vermelha")
+        case .amarela_4:   return Color("amarela")
+        case .lilas_5:     return Color("lilas")
+        case .rubi_7:      return Color("rubi")
+        case .diamante_8:  return Color("diamante")
+        case .esmeralda_9: return Color("esmeralda")
+        case .turquesa_10: return Color("turquesa")
+        case .coral_11:    return Color("coral")
+        case .safira_12:   return Color("safira")
+        case .jade_13:     return Color("jade")
+        case .prata_15:    return Color("prata")
         }
     }
 }

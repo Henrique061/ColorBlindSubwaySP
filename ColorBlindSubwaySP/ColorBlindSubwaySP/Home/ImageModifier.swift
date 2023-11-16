@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 
 struct ImageModifier: ViewModifier {
+    @Environment(\.screenSize) var screenSize
     @Binding private var contentSize: CGSize
     private var min: CGFloat = 1.0
     private var max: CGFloat = 3.0
@@ -24,6 +25,8 @@ struct ImageModifier: ViewModifier {
                 var newLocation = startLocation ?? location
                 newLocation.x += value.translation.width
                 newLocation.y += value.translation.height
+//                newLocation.x = newLocation.x.clamped(to: 0 - currentScale * 400...screenSize.width + currentScale)
+//                newLocation.y = newLocation.y.clamped(to: 0 - currentScale * 400...screenSize.height + currentScale)
                 self.location = newLocation
             }.updating($startLocation) { (value, startLocation, transaction) in
                 startLocation = startLocation ?? location
@@ -43,23 +46,31 @@ struct ImageModifier: ViewModifier {
     
     var doubleTapGesture: some Gesture {
         TapGesture(count: 2).onEnded {
-            print("double")
             if currentScale <= min { currentScale = max } else
-            if currentScale >= max { currentScale = min } else {
-                currentScale = ((max - min) * 0.5 + min) < currentScale ? max : min
+            if currentScale >= max { currentScale = min; location = getCenterLocation() } else {
+                if (max - min) * 0.5 + min < currentScale {
+                    currentScale = max
+                } else {
+                    currentScale = min
+                    location = getCenterLocation()
+                }
             }
         }
     }
     
     func body(content: Content) -> some View {
             content
-            .onAppear { location = .init(x: contentSize.width / 2, y: contentSize.height / 2) }
+            .onAppear { location = getCenterLocation() }
             .frame(width: contentSize.width * currentScale, height: contentSize.height * currentScale, alignment: .center)
             .modifier(PinchToZoom(minScale: min, maxScale: max, scale: $currentScale))
             .position(location)
             .gesture(doubleTapGesture)
             .gesture(simpleDrag.simultaneously(with: fingerDrag))
             .animation(.easeInOut, value: currentScale)
+    }
+    
+    private func getCenterLocation() -> CGPoint {
+        return .init(x: screenSize.width / 2, y: screenSize.height / 2)
     }
 }
 
@@ -140,3 +151,8 @@ struct PinchToZoom: ViewModifier {
     }
 }
 
+extension Comparable {
+    func clamped(to limits: ClosedRange<Self>) -> Self {
+        return min(max(self, limits.lowerBound), limits.upperBound)
+    }
+}
