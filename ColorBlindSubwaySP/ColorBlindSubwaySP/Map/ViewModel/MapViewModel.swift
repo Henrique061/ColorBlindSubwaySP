@@ -77,6 +77,10 @@ class MapViewModel : ObservableObject {
         }
     }
     
+    public func setFilter(filter: [LineCase: Color]){
+        linesColors = filter
+    }
+    
     private func setAllLinesOpacity(to value: Double) {
         LineCase.allCases.forEach { line in
             linesOpacity[line] = value

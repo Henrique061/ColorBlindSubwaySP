@@ -11,22 +11,24 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var showingSheet = false
+    @State private var showingSheetFilter = false
     
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
                 MapView()
-//                InfoView()
-                
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button {
-                                FilterView()
+                                showingSheetFilter.toggle()
                             } label: {
                                 VStack {
                                     Image(systemName: "camera.filters")
                                     Text("Filtros")
-                                }
+                                }.sheet(isPresented: $showingSheetFilter, content: {
+                                    FilterView()
+                                        .presentationDetents([.medium, .large])
+                                })
                             }
                             Spacer()
                                 .frame(width: 5)
