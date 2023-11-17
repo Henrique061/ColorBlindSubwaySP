@@ -10,12 +10,14 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @StateObject var mapViewModel = MapViewModel()
     @State private var showingSheet = false
+    
     
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
-                MapView()
+                MapView(mapVm: mapViewModel)
 //                InfoView()
                 
                     .toolbar {
@@ -39,7 +41,7 @@ struct HomeView: View {
                                     Text("Cores")
                                 }
                             }.sheet(isPresented: $showingSheet, content: {
-                                ColorView()
+                                ColorView(mapVm: mapViewModel)
                                     .presentationDetents([.medium, .large])
                             })
                             Spacer()
@@ -72,8 +74,8 @@ struct HomeView: View {
 //#Preview {
 //    HomeView()
 //}
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//    }
+//}
