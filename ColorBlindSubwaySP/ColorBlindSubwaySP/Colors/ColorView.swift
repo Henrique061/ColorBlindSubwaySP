@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ColorView: View {
-    
+    @StateObject var mapVm: MapViewModel
+    //@State var selectColor: LineCase
     var body: some View {
         VStack {
             HStack {
@@ -31,11 +32,16 @@ struct ColorView: View {
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 4), spacing: 8) {
                 ForEach(LineCase.allCases, id: \.self) { type in
-                    Button {
-                        //chamar acao
-                    } label: {
-                        CircleComponent(circleType: type)
-                    }
+//                    ColorPicker("teste", selection: mapVm.bindingLineColor(for: type))
+                    CircleComponent(
+                        mapVm: mapVm,
+                        circleType: type
+                    )
+//                    Button {
+//                        //chamar acao
+//                    } label: {
+//                        
+//                    }
                     
                 }
             }
@@ -46,8 +52,8 @@ struct ColorView: View {
 }
 
 
-
-#Preview {
-    ColorView()
-}
+//
+//#Preview {
+//    ColorView()
+//}
 
