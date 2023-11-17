@@ -9,7 +9,11 @@ import SwiftUI
 
 struct FilterView: View {
     var body: some View {
-        Text("View de filtros")
+        VStack {
+            Text("Filtros")
+                .font(.system(size: 22).weight(.bold))
+            Spacer()
+        }
     }
 }
 

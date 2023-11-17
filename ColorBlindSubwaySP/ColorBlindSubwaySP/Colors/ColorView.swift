@@ -47,7 +47,11 @@ struct ColorView: View {
 
 
 
-#Preview {
-    ColorView()
+//#Preview {
+//    ColorView()
+//}
+struct ColorView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
 }
-

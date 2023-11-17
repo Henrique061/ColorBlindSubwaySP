@@ -21,7 +21,7 @@ struct HomeView: View {
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button {
-                                //chamar a sheet
+                                FilterView()
                             } label: {
                                 VStack {
                                     Image(systemName: "camera.filters")

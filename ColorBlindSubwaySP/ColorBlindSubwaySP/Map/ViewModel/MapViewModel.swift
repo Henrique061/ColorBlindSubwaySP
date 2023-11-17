@@ -10,6 +10,7 @@ import SwiftUI
 
 class MapViewModel : ObservableObject {
     //MARK: - VARS
+//    @State var selectedFilter: FilterModel
     @Published var linesColors: [LineCase: Color] = {
         var aux = [LineCase: Color]()
         
