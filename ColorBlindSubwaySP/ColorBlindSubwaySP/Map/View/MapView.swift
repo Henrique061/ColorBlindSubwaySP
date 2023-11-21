@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MapView: View {
-    @StateObject var mapVm = MapViewModel()
+    
+    @StateObject var mapVm: MapViewModel 
     @State var mapSize: CGSize = .init(width: 400, height: 400)
     
     // MARK: - BODY

@@ -10,25 +10,25 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @StateObject var mapViewModel = MapViewModel()
     @State private var showingSheet = false
-    @State private var showingSheetFilter = false
+    
     
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
-                MapView()
+                MapView(mapVm: mapViewModel)
+//                InfoView()
+                
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button {
-                                showingSheetFilter.toggle()
+                                //chamar a sheet
                             } label: {
                                 VStack {
                                     Image(systemName: "camera.filters")
                                     Text("Filtros")
-                                }.sheet(isPresented: $showingSheetFilter, content: {
-                                    FilterView()
-                                        .presentationDetents([.medium, .large])
-                                })
+                                }
                             }
                             Spacer()
                                 .frame(width: 5)
@@ -41,7 +41,7 @@ struct HomeView: View {
                                     Text("Cores")
                                 }
                             }.sheet(isPresented: $showingSheet, content: {
-                                ColorView()
+                                ColorView(mapVm: mapViewModel)
                                     .presentationDetents([.medium, .large])
                             })
                             Spacer()
@@ -74,8 +74,8 @@ struct HomeView: View {
 //#Preview {
 //    HomeView()
 //}
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//    }
+//}

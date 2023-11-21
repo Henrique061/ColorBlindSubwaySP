@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ColorView: View {
+    @StateObject var mapVm: MapViewModel
     
     var body: some View {
         VStack {
@@ -31,11 +32,10 @@ struct ColorView: View {
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 4), spacing: 8) {
                 ForEach(LineCase.allCases, id: \.self) { type in
-                    Button {
-                        //chamar acao
-                    } label: {
-                        CircleComponent(circleType: type)
-                    }
+                    CircleComponent(
+                        mapVm: mapVm,
+                        circleType: type
+                    )
                     
                 }
             }
@@ -45,13 +45,8 @@ struct ColorView: View {
     }
 }
 
-
-
-//#Preview {
-//    ColorView()
+//struct ColorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView(mapViewModel: mapVM)
+//    }
 //}
-struct ColorView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
