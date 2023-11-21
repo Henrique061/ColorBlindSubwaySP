@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FilterView: View {
+    
     var body: some View {
         VStack {
             Spacer()
@@ -19,10 +20,30 @@ struct FilterView: View {
                 .frame(height: 20)
             
             HStack{
-                FilterComponent(filterColor: Color("deuteranopia"), filterName: "Deuteranopia")
-                FilterComponent(filterColor: Color("protanopia"), filterName: "Protanopia")
-                FilterComponent(filterColor: Color("tritanopia"), filterName: "Tritanopia")
-                FilterComponent(filterColor: Color("acromatopsia"), filterName: "Acromatopsia")
+                Button(action: {
+                    
+                }, label: {
+                    FilterComponent(filterColor: Color("deuteranopia"), filterName: "Deuteranopia")
+                })
+                Button(action: {
+                    
+                }, label: {
+                    FilterComponent(filterColor: Color("protanopia"), filterName: "Protanopia")
+                })
+                Button(action: {
+                    
+                }, label: {
+                    FilterComponent(filterColor: Color("tritanopia"), filterName: "Tritanopia")
+                })
+                Button(action: {
+                    
+                }, label: {
+                    FilterComponent(filterColor: Color("acromatopsia"), filterName: "Acromatopsia")
+                })
+                
+                
+                
+                
             }
             
         }
