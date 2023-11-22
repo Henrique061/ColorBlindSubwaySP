@@ -30,23 +30,18 @@ struct ColorView: View {
               
             }.padding()
             
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 4), spacing: 8) {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 3), count: 4), spacing: 3) {
                 ForEach(LineCase.allCases, id: \.self) { type in
 //                    ColorPicker("teste", selection: mapVm.bindingLineColor(for: type))
                     CircleComponent(
                         mapVm: mapVm,
                         circleType: type
                     )
-//                    Button {
-//                        //chamar acao
-//                    } label: {
-//                        
-//                    }
-                    
                 }
             }
             
-        }.padding()
+        }
+        .padding()
         Spacer()
     }
 }
