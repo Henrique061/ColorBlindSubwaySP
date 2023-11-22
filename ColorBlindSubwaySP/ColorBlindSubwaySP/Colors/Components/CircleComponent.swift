@@ -24,7 +24,7 @@ struct CircleComponent: View {
             Circle()
                 .fill(circleColor)
                 .shadow(radius: 2, y: 4)
-                .frame(width: 60, alignment: .center)
+                .frame(width: 50, alignment: .center)
                 .padding()
                 .overlay {
                     ColorPicker("", selection: mapVm.bindingLineColor(for: circleType))
@@ -33,7 +33,7 @@ struct CircleComponent: View {
                         .scaleEffect(2)
                 }
             Text(circleType.title)
-                .font(.system(size: 13).weight(.bold))
+                .font(.system(size: 12).weight(.bold))
         }
         
         
