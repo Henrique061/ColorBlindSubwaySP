@@ -13,7 +13,6 @@ struct FilterComponent: View {
     
     var body: some View {
         VStack {
-            //criar como botao!!
             Circle()
                 .fill(filterColor)
                 .frame(width: 50)
