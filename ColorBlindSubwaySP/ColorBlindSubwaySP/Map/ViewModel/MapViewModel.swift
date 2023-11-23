@@ -11,7 +11,6 @@ import SwiftUI
 class MapViewModel : ObservableObject {
     //MARK: - VARS
     @Published var linesColors: [LineCase: Color] = StandardFilters.originalColors
-
     @Published var linesOpacity: [LineCase: Double] = {
         var aux = [LineCase: Double]()
         
