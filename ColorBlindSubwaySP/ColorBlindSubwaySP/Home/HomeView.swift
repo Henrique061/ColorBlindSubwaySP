@@ -29,7 +29,7 @@ struct HomeView: View {
                                     Image(systemName: "camera.filters")
                                     Text("Filtros")
                                 }.sheet(isPresented: $showingSheetFilter, content: {
-                                    FilterView()
+                                    FilterView(setFilter: mapViewModel.setFilter)
                                         .presentationDetents([.medium, .large])
                                 })
                             }

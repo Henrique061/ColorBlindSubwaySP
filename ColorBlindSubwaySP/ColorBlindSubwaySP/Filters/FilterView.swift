@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FilterView: View {
+    var setFilter: ([LineCase:Color])->Void
     
     var body: some View {
         VStack {
@@ -21,30 +22,31 @@ struct FilterView: View {
             
             HStack{
                 Button(action: {
-                    
+                    setFilter(StandardFilters.deuteranopia)
                 }, label: {
                     FilterComponent(filterColor: Color("deuteranopia"), filterName: "Deuteranopia")
                 })
                 Button(action: {
-                    
+                    setFilter(StandardFilters.protanopia)
                 }, label: {
                     FilterComponent(filterColor: Color("protanopia"), filterName: "Protanopia")
                 })
                 Button(action: {
-                    
+                    setFilter(StandardFilters.tritanopia)
                 }, label: {
                     FilterComponent(filterColor: Color("tritanopia"), filterName: "Tritanopia")
                 })
                 Button(action: {
-                    
+                    setFilter(StandardFilters.acromatopsia)
                 }, label: {
                     FilterComponent(filterColor: Color("acromatopsia"), filterName: "Acromatopsia")
                 })
-                
-                
-                
-                
             }
+            Button(action: {
+                setFilter(StandardFilters.originalColors)
+            }, label: {
+                FilterComponent(filterColor: Color("original"), filterName: "Sem filtro")
+            })
             
         }
     }
