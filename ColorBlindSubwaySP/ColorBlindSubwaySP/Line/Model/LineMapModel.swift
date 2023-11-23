@@ -21,7 +21,7 @@ enum LineCase: CaseIterable, Codable, Hashable, Identifiable {
         case .amarela_4:   return "4 - Amarela"
         case .lilas_5:     return "5 - Lilás"
         case .rubi_7:      return "7 - Rubi"
-        case .diamante_8:  return "8 - Diadema"
+        case .diamante_8:  return "8 - Diamante"
         case .esmeralda_9: return "9 - Esmeralda"
         case .turquesa_10: return "10 - Turquesa"
         case .coral_11:    return "11 - Coral"

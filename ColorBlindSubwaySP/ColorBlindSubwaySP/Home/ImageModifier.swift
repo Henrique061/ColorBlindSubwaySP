@@ -11,7 +11,7 @@ import UIKit
 struct ImageModifier: ViewModifier {
     @Environment(\.screenSize) var screenSize
     @Binding private var contentSize: CGSize
-    private var min: CGFloat = 1.0
+    private var min: CGFloat = 0.75
     private var max: CGFloat = 2.5
     @State var currentScale: CGFloat = 1.0
     
@@ -25,8 +25,8 @@ struct ImageModifier: ViewModifier {
                 var newLocation = startLocation ?? location
                 newLocation.x += value.translation.width
                 newLocation.y += value.translation.height
-                newLocation.x = newLocation.x.clamped(to: 0 - currentScale * 200 ... screenSize.width  + currentScale * 200)
-                newLocation.y = newLocation.y.clamped(to: 0 - currentScale * 100 ... screenSize.height + currentScale * 100)
+                newLocation.x = newLocation.x.clamped(to: -getBorderLimit() ... screenSize.width  + getBorderLimit()) // 30 ... 2090
+                newLocation.y = newLocation.y.clamped(to: -getBorderLimit(byHeight: true) ... screenSize.height + getBorderLimit(byHeight: true)) // 30 ... 1290
                 self.location = newLocation
             }.updating($startLocation) { (value, startLocation, transaction) in
                 startLocation = startLocation ?? location
@@ -46,17 +46,21 @@ struct ImageModifier: ViewModifier {
     
     var doubleTapGesture: some Gesture {
         SpatialTapGesture(count: 2).onEnded { event in
+            // zoom out to zoom in
             if currentScale <= min {
                 currentScale = max
+                location = event.location
             }
             
+            // zoom in to zoom out
             else if currentScale >= max {
                 currentScale = min
                 location = getCenterLocation()
             }
             
+            // altered zoom value
             else {
-                if (max - min) * 0.5 + min < currentScale {
+                if (max - min) * 0.5 + min > currentScale {
                     currentScale = max
                     location = getInverseLocation(to: event.location)
                 } else {
@@ -72,8 +76,8 @@ struct ImageModifier: ViewModifier {
             .onAppear {
                 location = getCenterLocation()
             }
-            .frame(width: contentSize.width, height: contentSize.height, alignment: .center)
-            .scaleEffect(currentScale)
+            .frame(width: contentSize.width, height: contentSize.height)
+            .scaleEffect(currentScale, anchor: .center)
             .modifier(PinchToZoom(minScale: min, maxScale: max, scale: $currentScale))
             .position(location)
             .gesture(doubleTapGesture)
@@ -96,6 +100,19 @@ struct ImageModifier: ViewModifier {
         
         return .init(x: center.x + xDiff, y: center.y + yDiff)
     }
+    
+    private func getBorderLimit(byHeight: Bool = false) -> CGFloat {
+        let minBorderValue: CGFloat = 30
+        let maxBorderValue: CGFloat = byHeight ? 1290 : 2090
+        
+        let maxBorderDiff: CGFloat = maxBorderValue - minBorderValue
+        let maxScaleDiff: CGFloat = self.max - self.min
+        
+        let currentScalePercentage: CGFloat = (100 * (self.currentScale - self.min)) / maxScaleDiff
+        let currentBorderValue: CGFloat = (maxBorderDiff * currentScalePercentage) / 100
+        
+        return currentBorderValue + minBorderValue
+    }
 }
 
 class PinchZoomView: UIView {
@@ -106,7 +123,7 @@ class PinchZoomView: UIView {
     let scaleChange: (CGFloat) -> Void
     
     init(minScale: CGFloat,
-           maxScale: CGFloat,
+         maxScale: CGFloat,
          currentScale: CGFloat,
          scaleChange: @escaping (CGFloat) -> Void) {
         self.minScale = minScale
@@ -127,6 +144,7 @@ class PinchZoomView: UIView {
         switch gesture.state {
         case .began:
             isPinching = true
+            gesture.scale = scale
             
         case .changed, .ended:
             if gesture.scale <= minScale {

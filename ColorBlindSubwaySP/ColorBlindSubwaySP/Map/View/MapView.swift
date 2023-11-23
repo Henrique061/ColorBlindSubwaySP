@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MapView: View {
-    
     @StateObject var mapVm: MapViewModel 
     @State var mapSize: CGSize = .init(width: 400, height: 400)
     
@@ -16,6 +15,7 @@ struct MapView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
+                
                 // LINES
                 ForEach(LineMapModel.lines) { line in
                     LineMapComponent(
@@ -37,8 +37,14 @@ struct MapView: View {
                         rotation: connector.rotation
                     )
                 }
+                
+//                Rectangle()
+//                    .scaledToFill()
+//                    .scaleEffect(2)
+//                    .foregroundStyle(.green)
+//                    .opacity(0.5)
             }
-            .onAppear{self.mapSize = proxy.size}
+            .onAppear{self.mapSize = .init(width: proxy.size.width * 2, height: proxy.size.height * 2)}
         }
         .aspectRatio(contentMode: .fill)
         .modifier(ImageModifier(contentSize: $mapSize))
