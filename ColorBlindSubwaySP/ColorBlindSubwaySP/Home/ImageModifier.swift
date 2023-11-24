@@ -11,9 +11,10 @@ import UIKit
 struct ImageModifier: ViewModifier {
     @Environment(\.screenSize) var screenSize
     @Binding private var contentSize: CGSize
-    private var min: CGFloat = 0.75
-    private var max: CGFloat = 2.5
+    private let min: CGFloat = 1.0
+    private let max: CGFloat = 4.0
     @State var currentScale: CGFloat = 1.0
+    @State var previousScale: CGFloat = 1.0
     
     @State var location: CGPoint = CGPoint.zero
     @GestureState private var fingerLocation: CGPoint? = nil
@@ -49,7 +50,6 @@ struct ImageModifier: ViewModifier {
             // zoom out to zoom in
             if currentScale <= min {
                 currentScale = max
-                location = event.location
             }
             
             // zoom in to zoom out
@@ -62,7 +62,6 @@ struct ImageModifier: ViewModifier {
             else {
                 if (max - min) * 0.5 + min > currentScale {
                     currentScale = max
-                    location = getInverseLocation(to: event.location)
                 } else {
                     currentScale = min
                     location = getCenterLocation()
@@ -72,14 +71,13 @@ struct ImageModifier: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-            content
+        content
             .onAppear {
                 location = getCenterLocation()
             }
             .frame(width: contentSize.width, height: contentSize.height)
-            .scaleEffect(currentScale, anchor: .center)
-            .modifier(PinchToZoom(minScale: min, maxScale: max, scale: $currentScale))
             .position(location)
+            .modifier(PinchToZoom(minScale: min, maxScale: max, scale: $currentScale))
             .gesture(doubleTapGesture)
             .gesture(simpleDrag.simultaneously(with: fingerDrag))
             .animation(.easeInOut, value: currentScale)
@@ -102,8 +100,8 @@ struct ImageModifier: ViewModifier {
     }
     
     private func getBorderLimit(byHeight: Bool = false) -> CGFloat {
-        let minBorderValue: CGFloat = 30
-        let maxBorderValue: CGFloat = byHeight ? 1290 : 2090
+        let minBorderValue: CGFloat = getBorderMultiplierByDevice(byMin: true, byHeight: byHeight)
+        let maxBorderValue: CGFloat = getBorderMultiplierByDevice(byHeight: byHeight)
         
         let maxBorderDiff: CGFloat = maxBorderValue - minBorderValue
         let maxScaleDiff: CGFloat = self.max - self.min
@@ -112,6 +110,24 @@ struct ImageModifier: ViewModifier {
         let currentBorderValue: CGFloat = (maxBorderDiff * currentScalePercentage) / 100
         
         return currentBorderValue + minBorderValue
+    }
+    
+    private func getBorderMultiplierByDevice(byMin: Bool = false, byHeight: Bool = false) -> CGFloat {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            if byMin {
+                return byHeight ? screenSize.height * -0.25 : screenSize.width * -0.30
+            } else {
+                return byHeight ? screenSize.height * -0.25 : screenSize.width * -0.08
+            }
+            
+        default:
+            if byMin {
+                return byHeight ? screenSize.height * -0.08 : screenSize.width * 0.08
+            } else {
+                return byHeight ? screenSize.height * -0.10 : screenSize.width * 0.44
+            }
+        }
     }
 }
 
@@ -182,12 +198,11 @@ struct PinchToZoom: ViewModifier {
     let minScale: CGFloat
     let maxScale: CGFloat
     @Binding var scale: CGFloat
-    @State var anchor: UnitPoint = .center
     @State var isPinching: Bool = false
     
     func body(content: Content) -> some View {
         content
-            .scaleEffect(scale, anchor: anchor)
+            .scaleEffect(scale, anchor: .center)
             .animation(.spring(), value: isPinching)
             .overlay(PinchZoom(minScale: minScale, maxScale: maxScale, scale: $scale, isPinching: $isPinching))
     }

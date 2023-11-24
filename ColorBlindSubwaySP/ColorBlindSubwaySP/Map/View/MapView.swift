@@ -37,14 +37,8 @@ struct MapView: View {
                         rotation: connector.rotation
                     )
                 }
-                
-//                Rectangle()
-//                    .scaledToFill()
-//                    .scaleEffect(2)
-//                    .foregroundStyle(.green)
-//                    .opacity(0.5)
             }
-            .onAppear{self.mapSize = .init(width: proxy.size.width * 2, height: proxy.size.height * 2)}
+            .onAppear{self.mapSize = .init(width: proxy.size.width, height: proxy.size.height)}
         }
         .aspectRatio(contentMode: .fill)
         .modifier(ImageModifier(contentSize: $mapSize))

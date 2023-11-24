@@ -10,17 +10,16 @@ import SwiftUI
 
 struct HomeView: View {
     
-//    @Environment(\.screenSize) var screenSize
+    @Environment(\.screenSize) var screenSize
     @StateObject var mapViewModel = MapViewModel()
     @State private var showingSheet = false
+    @State var mapSize: CGSize = .zero
     
     
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
                 MapView(mapVm: mapViewModel)
-//                InfoView()
-                
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button {
@@ -44,14 +43,12 @@ struct HomeView: View {
                             }.sheet(isPresented: $showingSheet, content: {
                                 ColorView(mapVm: mapViewModel)
                                     .presentationDetents([.medium, .large])
-//                                    .presentationDragIndicator(.automatic)
                                     .presentationDetents([.fraction(0.75)])
                             })
                             Spacer()
-//                                .frame(width: 5)
                                 .padding()
                                 .frame(width: 5)
-//                                .frame(width: 300, height: 200)
+                            
                             Button {
                                 //chamar a sheet
                             } label: {
