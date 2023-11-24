@@ -24,7 +24,7 @@ struct ImageModifier: ViewModifier {
         DragGesture()
             .onChanged { value in
                 var newLocation = startLocation ?? location
-                newLocation.x += value.translation.width
+                newLocation.x += value.translation.width * getDragMultiplier()
                 newLocation.y += value.translation.height
                 newLocation.x = newLocation.x.clamped(to: -getBorderLimit() ... screenSize.width  + getBorderLimit()) // 30 ... 2090
                 newLocation.y = newLocation.y.clamped(to: -getBorderLimit(byHeight: true) ... screenSize.height + getBorderLimit(byHeight: true)) // 30 ... 1290
@@ -110,6 +110,21 @@ struct ImageModifier: ViewModifier {
         let currentBorderValue: CGFloat = (maxBorderDiff * currentScalePercentage) / 100
         
         return currentBorderValue + minBorderValue
+    }
+    
+    private func getDragMultiplier() -> CGFloat {
+        let minValue: CGFloat = 0.01
+        let maxValue: CGFloat = 1.0
+        
+        let valueDiff = minValue - maxValue
+        let scaleDiff = self.max - self.min
+        
+        let currentScalePercentage: CGFloat = (100 * (self.currentScale - self.min)) / scaleDiff
+        let invertedScaleDiff: CGFloat = currentScalePercentage - 50
+        let invertedScalePercentage = currentScalePercentage - invertedScaleDiff
+        
+        let currentScaleValue: CGFloat = (minValue * invertedScalePercentage) / 100
+        return currentScaleValue + maxValue
     }
     
     private func getBorderMultiplierByDevice(byMin: Bool = false, byHeight: Bool = false) -> CGFloat {
