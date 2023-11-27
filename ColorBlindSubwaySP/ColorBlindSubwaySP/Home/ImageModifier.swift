@@ -25,7 +25,7 @@ struct ImageModifier: ViewModifier {
             .onChanged { value in
                 var newLocation = startLocation ?? location
                 newLocation.x += value.translation.width * getDragMultiplier()
-                newLocation.y += value.translation.height
+                newLocation.y += value.translation.height * getDragMultiplier()
                 newLocation.x = newLocation.x.clamped(to: -getBorderLimit() ... screenSize.width  + getBorderLimit()) // 30 ... 2090
                 newLocation.y = newLocation.y.clamped(to: -getBorderLimit(byHeight: true) ... screenSize.height + getBorderLimit(byHeight: true)) // 30 ... 1290
                 self.location = newLocation
@@ -113,17 +113,16 @@ struct ImageModifier: ViewModifier {
     }
     
     private func getDragMultiplier() -> CGFloat {
-        let minValue: CGFloat = 0.01
+        let minValue: CGFloat = 0.4
         let maxValue: CGFloat = 1.0
         
         let valueDiff = minValue - maxValue
         let scaleDiff = self.max - self.min
         
         let currentScalePercentage: CGFloat = (100 * (self.currentScale - self.min)) / scaleDiff
-        let invertedScaleDiff: CGFloat = currentScalePercentage - 50
-        let invertedScalePercentage = currentScalePercentage - invertedScaleDiff
         
-        let currentScaleValue: CGFloat = (minValue * invertedScalePercentage) / 100
+        let currentScaleValue: CGFloat = (valueDiff * currentScalePercentage) / 100
+        print(currentScaleValue + maxValue)
         return currentScaleValue + maxValue
     }
     
