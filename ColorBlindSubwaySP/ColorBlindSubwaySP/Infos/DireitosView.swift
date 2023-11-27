@@ -9,7 +9,12 @@ import SwiftUI
 
 struct DireitosView: View {
     var body: some View {
-        Text("©2023Metrozin. Todos os direitos reservados a seus criadores: Caroline, Henrique, Luana.")
+        VStack {
+            Text("""
+            ©2023MeuMetrô. Todos os direitos reservados a seus criadores: Caroline, Henrique, Luana.
+            Mapa das linhas de metrô, direitos reservados a Metrô SP: www.metro.sp.gov.br
+            """)
+        }
         .multilineTextAlignment(.leading)
         .padding(20)
     }

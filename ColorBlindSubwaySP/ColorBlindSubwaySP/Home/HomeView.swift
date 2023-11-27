@@ -14,7 +14,7 @@ struct HomeView: View {
     @StateObject var mapViewModel = MapViewModel()
     @State private var showingSheet = false
     @State var mapSize: CGSize = .zero
-    
+    @State private var showingSheetFilter = false
     
     var body: some View {
         NavigationStack {
@@ -23,12 +23,15 @@ struct HomeView: View {
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button {
-                                //chamar a sheet
+                                showingSheetFilter.toggle()
                             } label: {
                                 VStack {
                                     Image(systemName: "camera.filters")
                                     Text("Filtros")
-                                }
+                                }.sheet(isPresented: $showingSheetFilter, content: {
+                                    FilterView(setFilter: mapViewModel.setFilter)
+                                        .presentationDetents([.medium, .large])
+                                })
                             }
                             Spacer()
                                 .frame(width: 5)

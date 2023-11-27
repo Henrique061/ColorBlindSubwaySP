@@ -22,7 +22,6 @@ struct InfoView: View {
                 NavigationButton(image: "c.circle", text: "Direitos Autorais", link: DireitosView())
                 Spacer()
             }
-            
             .padding(20)
             .padding(.top, 30)
             

@@ -10,25 +10,7 @@ import SwiftUI
 
 class MapViewModel : ObservableObject {
     //MARK: - VARS
-    @Published var linesColors: [LineCase: Color] = {
-        var aux = [LineCase: Color]()
-        
-        aux[.azul_1]      = Color("azul")
-        aux[.verde_2]     = Color("verde")
-        aux[.vermelha_3]  = Color("vermelha")
-        aux[.amarela_4]   = Color("amarela")
-        aux[.lilas_5]     = Color("lilas")
-        aux[.rubi_7]      = Color("rubi")
-        aux[.diamante_8]  = Color("diamante")
-        aux[.esmeralda_9] = Color("esmeralda")
-        aux[.turquesa_10] = Color("turquesa")
-        aux[.coral_11]    = Color("coral")
-        aux[.safira_12]   = Color("safira")
-        aux[.jade_13]     = Color("jade")
-        aux[.prata_15]    = Color("prata")
-        
-        return aux
-    }()
+    @Published var linesColors: [LineCase: Color] = StandardFilters.originalColors
     @Published var linesOpacity: [LineCase: Double] = {
         var aux = [LineCase: Double]()
         
@@ -74,6 +56,10 @@ class MapViewModel : ObservableObject {
             focusedLines.insert(line)
             linesOpacity[line] = 1
         }
+    }
+    
+    public func setFilter(filter: [LineCase: Color]){
+        linesColors = filter
     }
     
     private func setAllLinesOpacity(to value: Double) {

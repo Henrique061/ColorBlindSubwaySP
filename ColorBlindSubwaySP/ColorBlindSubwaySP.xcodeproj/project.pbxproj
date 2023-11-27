@@ -25,6 +25,10 @@
 		A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76608012AFDA7A200971717 /* NavigationButton.swift */; };
 		A76608042AFDDDA800971717 /* PoliticaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76608032AFDDDA800971717 /* PoliticaView.swift */; };
 		A76608062AFDDDBB00971717 /* DireitosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76608052AFDDDBB00971717 /* DireitosView.swift */; };
+		A770E0212B06BAC000655797 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770E0202B06BAC000655797 /* FilterModel.swift */; };
+		A770E0232B06F5CD00655797 /* StandardFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770E0222B06F5CD00655797 /* StandardFilters.swift */; };
+		A770E0252B06F5F800655797 /* TodosFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770E0242B06F5F800655797 /* TodosFilter.swift */; };
+		A770E02C2B07EE0900655797 /* FilterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770E02B2B07EE0900655797 /* FilterComponent.swift */; };
 		D43688BF2AFD60AC00B90BB5 /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43688BE2AFD60AC00B90BB5 /* ImageModifier.swift */; };
 		D4DD2A092AFD736800C54920 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD2A082AFD736800C54920 /* UIColor+Extension.swift */; };
 		D4DD2A0C2AFEA8D500C54920 /* CircleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD2A0B2AFEA8D500C54920 /* CircleComponent.swift */; };
@@ -33,7 +37,6 @@
 		D4F4B7292AFAA7E800758975 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B7282AFAA7E800758975 /* ColorView.swift */; };
 		D4F4B72B2AFAA7F900758975 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B72A2AFAA7F900758975 /* RouteView.swift */; };
 		D4F4B72D2AFAA80600758975 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B72C2AFAA80600758975 /* InfoView.swift */; };
-		D4F4B72F2AFAA81800758975 /* InfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B72E2AFAA81800758975 /* InfoComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,10 @@
 		A76608012AFDA7A200971717 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		A76608032AFDDDA800971717 /* PoliticaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticaView.swift; sourceTree = "<group>"; };
 		A76608052AFDDDBB00971717 /* DireitosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DireitosView.swift; sourceTree = "<group>"; };
+		A770E0202B06BAC000655797 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		A770E0222B06F5CD00655797 /* StandardFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFilters.swift; sourceTree = "<group>"; };
+		A770E0242B06F5F800655797 /* TodosFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosFilter.swift; sourceTree = "<group>"; };
+		A770E02B2B07EE0900655797 /* FilterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterComponent.swift; sourceTree = "<group>"; };
 		D43688BE2AFD60AC00B90BB5 /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
 		D4DD2A082AFD736800C54920 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D4DD2A0B2AFEA8D500C54920 /* CircleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleComponent.swift; sourceTree = "<group>"; };
@@ -83,7 +90,6 @@
 		D4F4B7282AFAA7E800758975 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		D4F4B72A2AFAA7F900758975 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		D4F4B72C2AFAA80600758975 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		D4F4B72E2AFAA81800758975 /* InfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,24 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		A770E01F2B06B72500655797 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A770E0202B06BAC000655797 /* FilterModel.swift */,
+				A770E0222B06F5CD00655797 /* StandardFilters.swift */,
+				A770E0242B06F5F800655797 /* TodosFilter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A770E02A2B07EDF500655797 /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				A770E02B2B07EE0900655797 /* FilterComponent.swift */,
+			);
+			path = Componentes;
+			sourceTree = "<group>";
+		};
 		D4DD2A072AFD733100C54920 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +312,8 @@
 		D4F4B71C2AF982A300758975 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				A770E02A2B07EDF500655797 /* Componentes */,
+				A770E01F2B06B72500655797 /* Model */,
 				D4F4B7262AFAA7D900758975 /* FilterView.swift */,
 			);
 			path = Filters;
@@ -315,7 +341,6 @@
 			children = (
 				A76608002AFDA78200971717 /* components */,
 				D4F4B72C2AFAA80600758975 /* InfoView.swift */,
-				D4F4B72E2AFAA81800758975 /* InfoComponent.swift */,
 				A76607FE2AFDA2B600971717 /* SobreView.swift */,
 				A76608032AFDDDA800971717 /* PoliticaView.swift */,
 				A76608052AFDDDBB00971717 /* DireitosView.swift */,
@@ -455,9 +480,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F4B7272AFAA7D900758975 /* FilterView.swift in Sources */,
+				A770E0212B06BAC000655797 /* FilterModel.swift in Sources */,
 				D4F4B7212AF9854300758975 /* HomeView.swift in Sources */,
 				91B148902AF0265900A33854 /* ContentView.swift in Sources */,
 				911A00142AFD59B10010F869 /* LineMapComponent.swift in Sources */,
+				A770E02C2B07EE0900655797 /* FilterComponent.swift in Sources */,
 				91EE6B422B0297E500C1A7B6 /* ConnectorMapComponent.swift in Sources */,
 				9182CA9F2AFC2995006DABBC /* MapView.swift in Sources */,
 				9145BF842AFECE0E00A1802B /* ConectorMapModel.swift in Sources */,
@@ -466,11 +493,12 @@
 				A76608042AFDDDA800971717 /* PoliticaView.swift in Sources */,
 				D4DD2A0C2AFEA8D500C54920 /* CircleComponent.swift in Sources */,
 				91B1488E2AF0265900A33854 /* ColorBlindSubwaySPApp.swift in Sources */,
+				A770E0232B06F5CD00655797 /* StandardFilters.swift in Sources */,
 				D4F4B72B2AFAA7F900758975 /* RouteView.swift in Sources */,
 				D43688BF2AFD60AC00B90BB5 /* ImageModifier.swift in Sources */,
 				A76607FF2AFDA2B600971717 /* SobreView.swift in Sources */,
 				A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */,
-				D4F4B72F2AFAA81800758975 /* InfoComponent.swift in Sources */,
+				A770E0252B06F5F800655797 /* TodosFilter.swift in Sources */,
 				91221E0A2B06983200CD14B6 /* MapViewModel.swift in Sources */,
 				D4F4B7292AFAA7E800758975 /* ColorView.swift in Sources */,
 				D4F4B72D2AFAA80600758975 /* InfoView.swift in Sources */,
@@ -640,6 +668,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ColorBlindSubwaySP/Essentials/Preview Content\"";
 				DEVELOPMENT_TEAM = 66824UF4JS;
+				DEVELOPMENT_TEAM = 7NPP9SCGSB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
