@@ -122,7 +122,6 @@ struct ImageModifier: ViewModifier {
         let currentScalePercentage: CGFloat = (100 * (self.currentScale - self.min)) / scaleDiff
         
         let currentScaleValue: CGFloat = (valueDiff * currentScalePercentage) / 100
-        print(currentScaleValue + maxValue)
         return currentScaleValue + maxValue
     }
     
