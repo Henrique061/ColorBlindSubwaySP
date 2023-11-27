@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+//    @Environment(\.screenSize) var screenSize
     @StateObject var mapViewModel = MapViewModel()
     @State private var showingSheet = false
     @State private var showingSheetFilter = false
@@ -46,9 +47,14 @@ struct HomeView: View {
                             }.sheet(isPresented: $showingSheet, content: {
                                 ColorView(mapVm: mapViewModel)
                                     .presentationDetents([.medium, .large])
+//                                    .presentationDragIndicator(.automatic)
+                                    .presentationDetents([.fraction(0.75)])
                             })
                             Spacer()
+//                                .frame(width: 5)
+                                .padding()
                                 .frame(width: 5)
+//                                .frame(width: 300, height: 200)
                             Button {
                                 //chamar a sheet
                             } label: {
