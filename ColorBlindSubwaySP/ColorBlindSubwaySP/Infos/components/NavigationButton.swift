@@ -17,11 +17,11 @@ struct NavigationButton<LinkView:View>: View {
             link
         } label: {
             HStack {
-                Image(systemName: image)
-                    .foregroundColor(.black)
-                    .font(.system(size: 20))
+//                Image(systemName: image)
+//                    .foregroundColor(.black)
+//                    .font(.system(size: 18))
                 Text(text)
-                    .font(.system(size: 20, weight: .medium, design: .rounded))
+                    .font(.system(size: 18, weight: .medium, design: .rounded))
                     .foregroundColor(Color(red: 0.05, green: 0.03, blue: 0))
             }
             .padding(20)
@@ -29,6 +29,5 @@ struct NavigationButton<LinkView:View>: View {
             .background(Color(red: 0.82, green: 0.91, blue: 0.91))
             .cornerRadius(35)
         }
-    
     }
 }
