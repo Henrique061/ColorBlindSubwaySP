@@ -37,7 +37,6 @@
 		D4F4B7292AFAA7E800758975 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B7282AFAA7E800758975 /* ColorView.swift */; };
 		D4F4B72B2AFAA7F900758975 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B72A2AFAA7F900758975 /* RouteView.swift */; };
 		D4F4B72D2AFAA80600758975 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B72C2AFAA80600758975 /* InfoView.swift */; };
-		D4F4B72F2AFAA81800758975 /* InfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4B72E2AFAA81800758975 /* InfoComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +90,6 @@
 		D4F4B7282AFAA7E800758975 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		D4F4B72A2AFAA7F900758975 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		D4F4B72C2AFAA80600758975 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		D4F4B72E2AFAA81800758975 /* InfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,7 +341,6 @@
 			children = (
 				A76608002AFDA78200971717 /* components */,
 				D4F4B72C2AFAA80600758975 /* InfoView.swift */,
-				D4F4B72E2AFAA81800758975 /* InfoComponent.swift */,
 				A76607FE2AFDA2B600971717 /* SobreView.swift */,
 				A76608032AFDDDA800971717 /* PoliticaView.swift */,
 				A76608052AFDDDBB00971717 /* DireitosView.swift */,
@@ -502,7 +499,6 @@
 				A76607FF2AFDA2B600971717 /* SobreView.swift in Sources */,
 				A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */,
 				A770E0252B06F5F800655797 /* TodosFilter.swift in Sources */,
-				D4F4B72F2AFAA81800758975 /* InfoComponent.swift in Sources */,
 				91221E0A2B06983200CD14B6 /* MapViewModel.swift in Sources */,
 				D4F4B7292AFAA7E800758975 /* ColorView.swift in Sources */,
 				D4F4B72D2AFAA80600758975 /* InfoView.swift in Sources */,
