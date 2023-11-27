@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		911A00142AFD59B10010F869 /* LineMapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A00132AFD59B10010F869 /* LineMapComponent.swift */; };
 		911A00172AFD5CD20010F869 /* LineMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A00162AFD5CD20010F869 /* LineMapModel.swift */; };
-		911A001B2AFD618D0010F869 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A001A2AFD618D0010F869 /* ColorExtension.swift */; };
 		91221E0A2B06983200CD14B6 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91221E092B06983200CD14B6 /* MapViewModel.swift */; };
 		9145BF842AFECE0E00A1802B /* ConectorMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9145BF832AFECE0E00A1802B /* ConectorMapModel.swift */; };
 		9182CA9F2AFC2995006DABBC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9182CA9E2AFC2995006DABBC /* MapView.swift */; };
@@ -59,7 +58,6 @@
 /* Begin PBXFileReference section */
 		911A00132AFD59B10010F869 /* LineMapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineMapComponent.swift; sourceTree = "<group>"; };
 		911A00162AFD5CD20010F869 /* LineMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineMapModel.swift; sourceTree = "<group>"; };
-		911A001A2AFD618D0010F869 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		91221E092B06983200CD14B6 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		9145BF832AFECE0E00A1802B /* ConectorMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectorMapModel.swift; sourceTree = "<group>"; };
 		9182CA9E2AFC2995006DABBC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -144,22 +142,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		911A00182AFD61760010F869 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				911A00192AFD617C0010F869 /* ViewModel */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
-		911A00192AFD617C0010F869 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				911A001A2AFD618D0010F869 /* ColorExtension.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		91221E082B06981B00CD14B6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +190,6 @@
 		91B1488C2AF0265900A33854 /* ColorBlindSubwaySP */ = {
 			isa = PBXGroup;
 			children = (
-				911A00182AFD61760010F869 /* Color */,
 				911A00112AFD599B0010F869 /* Line */,
 				9182CA9C2AFC295D006DABBC /* Map */,
 				D4DD2A072AFD733100C54920 /* Helpers */,
@@ -488,7 +469,6 @@
 				91EE6B422B0297E500C1A7B6 /* ConnectorMapComponent.swift in Sources */,
 				9182CA9F2AFC2995006DABBC /* MapView.swift in Sources */,
 				9145BF842AFECE0E00A1802B /* ConectorMapModel.swift in Sources */,
-				911A001B2AFD618D0010F869 /* ColorExtension.swift in Sources */,
 				911A00172AFD5CD20010F869 /* LineMapModel.swift in Sources */,
 				A76608042AFDDDA800971717 /* PoliticaView.swift in Sources */,
 				D4DD2A0C2AFEA8D500C54920 /* CircleComponent.swift in Sources */,
@@ -667,7 +647,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ColorBlindSubwaySP/Essentials/Preview Content\"";
-				DEVELOPMENT_TEAM = 66824UF4JS;
 				DEVELOPMENT_TEAM = 7NPP9SCGSB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
