@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ColorView: View {
-    @StateObject var mapVm: MapViewModel
+    @ObservedObject var mapVm: MapViewModel
     
     var body: some View {
         VStack {

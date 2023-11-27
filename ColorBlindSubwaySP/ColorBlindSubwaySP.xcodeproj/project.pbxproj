@@ -19,6 +19,8 @@
 		91B1489F2AF0265A00A33854 /* ColorBlindSubwaySPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1489E2AF0265A00A33854 /* ColorBlindSubwaySPTests.swift */; };
 		91B148A92AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B148A82AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift */; };
 		91B148AB2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B148AA2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift */; };
+		91CADC6E2B153517006F228E /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CADC6D2B153517006F228E /* FocusView.swift */; };
+		91CADC712B15359C006F228E /* LineFocusComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CADC702B15359C006F228E /* LineFocusComponent.swift */; };
 		91EE6B422B0297E500C1A7B6 /* ConnectorMapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE6B412B0297E500C1A7B6 /* ConnectorMapComponent.swift */; };
 		A76607FF2AFDA2B600971717 /* SobreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76607FE2AFDA2B600971717 /* SobreView.swift */; };
 		A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76608012AFDA7A200971717 /* NavigationButton.swift */; };
@@ -71,6 +73,8 @@
 		91B148A42AF0265A00A33854 /* ColorBlindSubwaySPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorBlindSubwaySPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B148A82AF0265A00A33854 /* ColorBlindSubwaySPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindSubwaySPUITests.swift; sourceTree = "<group>"; };
 		91B148AA2AF0265A00A33854 /* ColorBlindSubwaySPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindSubwaySPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91CADC6D2B153517006F228E /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
+		91CADC702B15359C006F228E /* LineFocusComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFocusComponent.swift; sourceTree = "<group>"; };
 		91EE6B412B0297E500C1A7B6 /* ConnectorMapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorMapComponent.swift; sourceTree = "<group>"; };
 		A76607FE2AFDA2B600971717 /* SobreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreView.swift; sourceTree = "<group>"; };
 		A76608012AFDA7A200971717 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				D4F4B71F2AF9833E00758975 /* Infos */,
 				D4F4B71E2AF9830800758975 /* Routes */,
 				D4F4B71D2AF982FF00758975 /* Colors */,
+				91CADC6B2B1534FD006F228E /* Focus */,
 				D4F4B71C2AF982A300758975 /* Filters */,
 				D4F4B71B2AF9829B00758975 /* Home */,
 				91B148B72AF0266F00A33854 /* Essentials */,
@@ -237,6 +242,31 @@
 				91B148932AF0265A00A33854 /* Preview Content */,
 			);
 			path = Essentials;
+			sourceTree = "<group>";
+		};
+		91CADC6B2B1534FD006F228E /* Focus */ = {
+			isa = PBXGroup;
+			children = (
+				91CADC6C2B153507006F228E /* View */,
+			);
+			path = Focus;
+			sourceTree = "<group>";
+		};
+		91CADC6C2B153507006F228E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91CADC6F2B153584006F228E /* Component */,
+				91CADC6D2B153517006F228E /* FocusView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91CADC6F2B153584006F228E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				91CADC702B15359C006F228E /* LineFocusComponent.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		A76608002AFDA78200971717 /* components */ = {
@@ -464,6 +494,7 @@
 				A770E0212B06BAC000655797 /* FilterModel.swift in Sources */,
 				D4F4B7212AF9854300758975 /* HomeView.swift in Sources */,
 				91B148902AF0265900A33854 /* ContentView.swift in Sources */,
+				91CADC712B15359C006F228E /* LineFocusComponent.swift in Sources */,
 				911A00142AFD59B10010F869 /* LineMapComponent.swift in Sources */,
 				A770E02C2B07EE0900655797 /* FilterComponent.swift in Sources */,
 				91EE6B422B0297E500C1A7B6 /* ConnectorMapComponent.swift in Sources */,
@@ -479,6 +510,7 @@
 				A76607FF2AFDA2B600971717 /* SobreView.swift in Sources */,
 				A76608022AFDA7A200971717 /* NavigationButton.swift in Sources */,
 				A770E0252B06F5F800655797 /* TodosFilter.swift in Sources */,
+				91CADC6E2B153517006F228E /* FocusView.swift in Sources */,
 				91221E0A2B06983200CD14B6 /* MapViewModel.swift in Sources */,
 				D4F4B7292AFAA7E800758975 /* ColorView.swift in Sources */,
 				D4F4B72D2AFAA80600758975 /* InfoView.swift in Sources */,

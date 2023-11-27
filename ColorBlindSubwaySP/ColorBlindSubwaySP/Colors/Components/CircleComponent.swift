@@ -32,6 +32,7 @@ struct CircleComponent: View {
                         .opacity(0.015)
                         .scaleEffect(2)
                 }
+            
             Text(circleType.title)
                 .font(.system(size: 12).weight(.bold))
         }
