@@ -10,6 +10,8 @@ import SwiftUI
 struct ColorView: View {
     @Environment(\.screenSize) var screenSize
     @ObservedObject var mapVm: MapViewModel
+//    @ObservedObject var saving: UserDefaultsPresets
+    
     let isIPad = UIDevice.current.userInterfaceIdiom == .pad
     
     var body: some View {
@@ -21,6 +23,12 @@ struct ColorView: View {
                 Spacer()
                 Button {
                     //ação de salvar
+                    UserDefaultsPresets.salvarPresetEscolhido(
+                        linesColors: mapVm.linesColors,
+                        key: UserDefaultsPresets.presetPersonalizadoKey
+                    )
+                   
+                    
                 } label: {
                     Text("Salvar")
                         .foregroundStyle(.white)

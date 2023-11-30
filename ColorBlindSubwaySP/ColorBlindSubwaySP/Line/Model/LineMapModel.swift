@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum LineCase: CaseIterable, Codable, Hashable, Identifiable {
+public enum LineCase: CaseIterable, Codable, Hashable, Identifiable {
     public var id: Self { self }
     
     case azul_1, verde_2, vermelha_3, amarela_4, lilas_5, rubi_7, diamante_8, esmeralda_9, turquesa_10, coral_11, safira_12, jade_13, prata_15

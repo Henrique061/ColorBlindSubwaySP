@@ -23,7 +23,7 @@ class MapViewModel : ObservableObject {
     @Published var focusedLines: Set<LineCase> = Set()
     
     init() {
-        let presetSalvo = UserDefaultsPresets().recuperarPresetSalvo(key: UserDefaultsPresets.pressetSalvoKey)
+        let presetSalvo = UserDefaultsPresets.recuperarPresetSalvo(key: UserDefaultsPresets.presetSalvoKey)
         self.linesColors = presetSalvo
     }
     
@@ -65,7 +65,7 @@ class MapViewModel : ObservableObject {
     
     public func setFilter(filter: [LineCase: Color]){
         linesColors = filter
-        UserDefaultsPresets().salvarPresetEscolhido(linesColors: linesColors, key: UserDefaultsPresets.pressetSalvoKey)
+        UserDefaultsPresets.salvarPresetEscolhido(linesColors: linesColors, key: UserDefaultsPresets.presetSalvoKey)
     }
     
     public func clearAllFocused() {

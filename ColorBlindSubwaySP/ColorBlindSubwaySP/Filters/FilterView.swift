@@ -46,7 +46,17 @@ struct FilterView: View {
                 }, label: {
                     FilterComponent(filterColor: Color("acromatopsia"), filterName: "Acromatopsia")
                 })
+                
+                if UserDefaults.standard.object(forKey: UserDefaultsPresets.presetPersonalizadoKey) != nil {
+                    Button(action: {
+                        setFilter(UserDefaultsPresets.recuperarPresetSalvo(key: UserDefaultsPresets.presetPersonalizadoKey))
+                    }, label: {
+                        FilterComponent(filterColor: Color(.azul), filterName: "Meu filtro")
+                    })
+                }
             }.frame(width: screenSize.width * 0.9, alignment: .leading)
+            
+            
             
         }
         .frame(width: screenSize.width * 0.9, height: screenSize.height * 0.5, alignment: .topLeading)
