@@ -10,7 +10,7 @@ import SwiftUI
 
 class MapViewModel : ObservableObject {
     //MARK: - VARS
-    @Published var linesColors: [LineCase: Color] = StandardFilters.originalColors
+    @Published var linesColors: [LineCase: Color]
     @Published var linesOpacity: [LineCase: Double] = {
         var aux = [LineCase: Double]()
         
@@ -21,6 +21,11 @@ class MapViewModel : ObservableObject {
         return aux
     }()
     @Published var focusedLines: Set<LineCase> = Set()
+    
+    init() {
+        let presetSalvo = UserDefaultsPresets().recuperarPresetSalvo(key: UserDefaultsPresets.pressetSalvoKey)
+        self.linesColors = presetSalvo
+    }
     
     //MARK: - BINDING GETTERS
     public func bindingLineColor(for key: LineCase) -> Binding<Color> {
@@ -60,6 +65,7 @@ class MapViewModel : ObservableObject {
     
     public func setFilter(filter: [LineCase: Color]){
         linesColors = filter
+        UserDefaultsPresets().salvarPresetEscolhido(linesColors: linesColors, key: UserDefaultsPresets.pressetSalvoKey)
     }
     
     private func setAllLinesOpacity(to value: Double) {

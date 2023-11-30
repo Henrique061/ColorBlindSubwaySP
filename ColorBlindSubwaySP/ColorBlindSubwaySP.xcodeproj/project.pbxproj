@@ -28,6 +28,7 @@
 		A770E0232B06F5CD00655797 /* StandardFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770E0222B06F5CD00655797 /* StandardFilters.swift */; };
 		A770E0252B06F5F800655797 /* TodosFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770E0242B06F5F800655797 /* TodosFilter.swift */; };
 		A770E02C2B07EE0900655797 /* FilterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770E02B2B07EE0900655797 /* FilterComponent.swift */; };
+		A79FFF502B16629300C66C9A /* UserDefaultsPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FFF4F2B16629300C66C9A /* UserDefaultsPresets.swift */; };
 		D43688BF2AFD60AC00B90BB5 /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43688BE2AFD60AC00B90BB5 /* ImageModifier.swift */; };
 		D4DD2A092AFD736800C54920 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD2A082AFD736800C54920 /* UIColor+Extension.swift */; };
 		D4DD2A0C2AFEA8D500C54920 /* CircleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD2A0B2AFEA8D500C54920 /* CircleComponent.swift */; };
@@ -80,6 +81,7 @@
 		A770E0222B06F5CD00655797 /* StandardFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFilters.swift; sourceTree = "<group>"; };
 		A770E0242B06F5F800655797 /* TodosFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosFilter.swift; sourceTree = "<group>"; };
 		A770E02B2B07EE0900655797 /* FilterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterComponent.swift; sourceTree = "<group>"; };
+		A79FFF4F2B16629300C66C9A /* UserDefaultsPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPresets.swift; sourceTree = "<group>"; };
 		D43688BE2AFD60AC00B90BB5 /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
 		D4DD2A082AFD736800C54920 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D4DD2A0B2AFEA8D500C54920 /* CircleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleComponent.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				A770E0202B06BAC000655797 /* FilterModel.swift */,
 				A770E0222B06F5CD00655797 /* StandardFilters.swift */,
 				A770E0242B06F5F800655797 /* TodosFilter.swift */,
+				A79FFF4F2B16629300C66C9A /* UserDefaultsPresets.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				911A00172AFD5CD20010F869 /* LineMapModel.swift in Sources */,
 				A76608042AFDDDA800971717 /* PoliticaView.swift in Sources */,
 				D4DD2A0C2AFEA8D500C54920 /* CircleComponent.swift in Sources */,
+				A79FFF502B16629300C66C9A /* UserDefaultsPresets.swift in Sources */,
 				91B1488E2AF0265900A33854 /* ColorBlindSubwaySPApp.swift in Sources */,
 				A770E0232B06F5CD00655797 /* StandardFilters.swift in Sources */,
 				D4F4B72B2AFAA7F900758975 /* RouteView.swift in Sources */,

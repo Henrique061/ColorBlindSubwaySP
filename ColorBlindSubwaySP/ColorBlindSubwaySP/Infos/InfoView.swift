@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct InfoView: View {
-//    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-//        NavigationView {
             VStack {
                 NavigationButton(image: "person", text: "Sobre", link: SobreView())
                 Spacer()
@@ -24,24 +22,6 @@ struct InfoView: View {
             }
             .padding(20)
             .padding(.top, 30)
-            
-//            .toolbar {
-//                ToolbarItem(placement: .principal) {
-//                    Text("Informações")
-//                        .font(.custom("Purple Smile", size: 24))
-//                        .foregroundColor(.black)
-//                }
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    Button(action: {
-//                        dismiss.callAsFunction()
-//                    }, label: {
-//                        Image(systemName: "chevron.left")
-//                            .font(.system(size: 23, weight: .heavy))
-//                            .foregroundColor(.blue)
-//                    })
-//                }
-//            }
-//        }
         .navigationTitle("Informações")
     }
 }

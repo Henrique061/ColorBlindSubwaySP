@@ -17,7 +17,7 @@ struct FilterView: View {
             Text("Filtros")
                 .font(.system(size: 22).weight(.bold))
             
-            HStack(spacing: 50){
+            HStack(spacing: 45){
                 Button(action: {
                     setFilter(StandardFilters.originalColors)
                 }, label: {
@@ -35,7 +35,7 @@ struct FilterView: View {
                 })
             }.frame(width: screenSize.width * 0.9, alignment: .leading)
 
-            HStack(spacing: 50){
+            HStack(spacing: 45){
                 Button(action: {
                     setFilter(StandardFilters.tritanopia)
                 }, label: {
@@ -48,7 +48,8 @@ struct FilterView: View {
                 })
             }.frame(width: screenSize.width * 0.9, alignment: .leading)
             
-        }.frame(width: screenSize.width * 0.9, height: screenSize.height * 0.5, alignment: .topLeading)
+        }
+        .frame(width: screenSize.width * 0.9, height: screenSize.height * 0.5, alignment: .topLeading)
     }
 }
 
