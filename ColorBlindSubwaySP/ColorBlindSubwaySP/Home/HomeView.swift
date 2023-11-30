@@ -12,9 +12,10 @@ struct HomeView: View {
     
     @Environment(\.screenSize) var screenSize
     @StateObject var mapViewModel = MapViewModel()
-    @State private var showingSheet = false
+    @State private var showingColorSheet  = false
+    @State private var showingFilterSheet = false
+    @State private var showingFocusSheet  = false
     @State var mapSize: CGSize = .zero
-    @State private var showingSheetFilter = false
     
     var body: some View {
         NavigationStack {
@@ -23,12 +24,12 @@ struct HomeView: View {
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button {
-                                showingSheetFilter.toggle()
+                                showingFilterSheet.toggle()
                             } label: {
                                 VStack {
                                     Image(systemName: "camera.filters")
                                     Text("Filtros")
-                                }.sheet(isPresented: $showingSheetFilter, content: {
+                                }.sheet(isPresented: $showingFilterSheet, content: {
                                     FilterView(setFilter: mapViewModel.setFilter)
                                         .presentationDetents([.medium, .large])
                                 })
@@ -37,13 +38,13 @@ struct HomeView: View {
                                 .frame(width: 5)
                             
                             Button {
-                                showingSheet.toggle()
+                                showingColorSheet.toggle()
                             } label: {
                                 VStack {
                                     Image(systemName: "scribble.variable")
                                     Text("Cores")
                                 }
-                            }.sheet(isPresented: $showingSheet, content: {
+                            }.sheet(isPresented: $showingColorSheet, content: {
                                 ColorView(mapVm: mapViewModel)
                                     .presentationDetents([.medium, .large])
                                     .presentationDetents([.fraction(0.75)])
@@ -53,12 +54,16 @@ struct HomeView: View {
                                 .frame(width: 5)
                             
                             Button {
-                                //chamar a sheet
+                                showingFocusSheet.toggle()
                             } label: {
                                 VStack {
                                     Image(systemName: "tram.circle.fill")
-                                    Text("Rotas")
+                                    Text("Foco")
                                 }
+                            }.sheet(isPresented: $showingFocusSheet) {
+                                FocusView(mapVm: mapViewModel)
+                                    .presentationDetents([.medium, .large])
+                                    .presentationDetents([.fraction(0.75)])
                             }
                             Spacer()
                                 .frame(width: 5)

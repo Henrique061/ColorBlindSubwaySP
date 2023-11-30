@@ -1,13 +1,13 @@
 //
-//  ColorView.swift
+//  FocusView.swift
 //  ColorBlindSubwaySP
 //
-//  Created by Luana Moraes on 07/11/23.
+//  Created by Henrique Assis on 27/11/23.
 //
 
 import SwiftUI
 
-struct ColorView: View {
+struct FocusView: View {
     @Environment(\.screenSize) var screenSize
     @ObservedObject var mapVm: MapViewModel
     let isIPad = UIDevice.current.userInterfaceIdiom == .pad
@@ -15,14 +15,16 @@ struct ColorView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Cores")
+                Text("Foco por linha")
                     .font(.system(size: screenSize.width * 0.056).weight(.bold))
-                    .padding(.horizontal, isIPad ? screenSize.width * -0.040 : screenSize.width * 0.007)
+                    .padding(.horizontal, isIPad ? screenSize.width * 0.024 : screenSize.width * 0.007)
+                
                 Spacer()
+                
                 Button {
-                    //ação de salvar
+                    self.mapVm.clearAllFocused()
                 } label: {
-                    Text("Salvar")
+                    Text("Limpar")
                         .foregroundStyle(.white)
                         .font(.system(size: screenSize.width * 0.038))
                         .background(
@@ -31,12 +33,13 @@ struct ColorView: View {
                                 .frame(width: screenSize.width * 0.203, height: screenSize.height * 0.039)
                         )
                 }
+                .padding(.horizontal, isIPad ? screenSize.width * 0.073 : screenSize.width * 0.025)
             }
-            .padding(.horizontal, isIPad ? screenSize.width * 0.073 : screenSize.width * 0.025)
+            .padding()
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 3), count: 4), spacing: 3) {
                 ForEach(LineCase.allCases, id: \.self) { type in
-                    CircleComponent(
+                    LineFocusComponent(
                         mapVm: mapVm,
                         circleType: type
                     )
@@ -48,9 +51,3 @@ struct ColorView: View {
         Spacer()
     }
 }
-
-//struct ColorView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView(mapViewModel: mapVM)
-//    }
-//}

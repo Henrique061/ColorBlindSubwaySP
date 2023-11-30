@@ -68,6 +68,11 @@ class MapViewModel : ObservableObject {
         UserDefaultsPresets().salvarPresetEscolhido(linesColors: linesColors, key: UserDefaultsPresets.pressetSalvoKey)
     }
     
+    public func clearAllFocused() {
+        focusedLines.removeAll()
+        setAllLinesOpacity(to: 1)
+    }
+    
     private func setAllLinesOpacity(to value: Double) {
         LineCase.allCases.forEach { line in
             linesOpacity[line] = value

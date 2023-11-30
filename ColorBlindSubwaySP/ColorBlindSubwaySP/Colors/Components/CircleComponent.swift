@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CircleComponent: View {
+    @Environment(\.screenSize) var screenSize
     var mapVm: MapViewModel
     var circleType: LineCase
     @Binding var circleColor: Color
@@ -23,8 +24,8 @@ struct CircleComponent: View {
         VStack {
             Circle()
                 .fill(circleColor)
-                .shadow(radius: 2, y: 4)
-                .frame(width: 50, alignment: .center)
+                .shadow(radius: screenSize.width * 0.005, y: screenSize.height * 0.005)
+                .frame(width: screenSize.width * 0.127, alignment: .center)
                 .padding()
                 .overlay {
                     ColorPicker("", selection: mapVm.bindingLineColor(for: circleType))
@@ -32,14 +33,11 @@ struct CircleComponent: View {
                         .opacity(0.015)
                         .scaleEffect(2)
                 }
+            
             Text(circleType.title)
-                .font(.system(size: 12).weight(.bold))
+                .font(.system(size: screenSize.width * 0.030).weight(.bold))
         }
         
         
     }
 }
-
-//#Preview {
-//    CircleComponent(circleType: <#CircleType#>)
-//}
