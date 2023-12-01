@@ -51,7 +51,7 @@ struct FilterView: View {
                     Button(action: {
                         setFilter(UserDefaultsPresets.recuperarPresetSalvo(key: UserDefaultsPresets.presetPersonalizadoKey))
                     }, label: {
-                        FilterComponent(filterColor: Color(.azul), filterName: "Meu filtro")
+                        FilterComponent(filterColor: Color("meuFiltro"), filterName: "Meu filtro")
                     })
                 }
             }.frame(width: screenSize.width * 0.9, alignment: .leading)
