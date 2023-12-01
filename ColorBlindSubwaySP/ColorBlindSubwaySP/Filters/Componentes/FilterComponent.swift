@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FilterComponent: View {
+    @Environment(\.screenSize) var screenSize
+    
     let filterColor: Color
     let filterName: String
     
@@ -15,11 +17,11 @@ struct FilterComponent: View {
         VStack {
             Circle()
                 .fill(filterColor)
-                .frame(width: 50)
+                .frame(width: screenSize.width * 0.127, alignment: .center)
                 .padding(10)
             
             Text(filterName)
-                .font(.system(size: 15).weight(.semibold))
+                .font(.system(size: screenSize.width * 0.030).weight(.semibold))
         }
         
     }

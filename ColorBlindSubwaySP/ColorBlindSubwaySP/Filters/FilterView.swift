@@ -9,13 +9,15 @@ import SwiftUI
 
 struct FilterView: View {
     @Environment(\.screenSize) var screenSize
+    let isIPad = UIDevice.current.userInterfaceIdiom == .pad
     
     var setFilter: ([LineCase:Color])->Void
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("Filtros")
-                .font(.system(size: 22).weight(.bold))
+                .font(.system(size: screenSize.width * 0.056).weight(.bold))
+                .padding(.horizontal, isIPad ? screenSize.width * -0.040 : screenSize.width * 0.007)
             
             HStack(spacing: 45){
                 Button(action: {
@@ -33,7 +35,9 @@ struct FilterView: View {
                 }, label: {
                     FilterComponent(filterColor: Color("protanopia"), filterName: "Protanopia")
                 })
-            }.frame(width: screenSize.width * 0.9, alignment: .leading)
+            }
+//            .frame(width: screenSize.width * 0.9, alignment: .leading)
+            .padding(.horizontal, isIPad ? screenSize.width * -0.040 : screenSize.width * 0.007)
 
             HStack(spacing: 45){
                 Button(action: {
@@ -54,12 +58,12 @@ struct FilterView: View {
                         FilterComponent(filterColor: Color("meuFiltro"), filterName: "Meu filtro")
                     })
                 }
-            }.frame(width: screenSize.width * 0.9, alignment: .leading)
-            
-            
-            
+            }
+            //.frame(width: screenSize.width * 0.9, alignment: .leading)
+            .padding(.horizontal, isIPad ? screenSize.width * -0.040 : screenSize.width * 0.007)
         }
-        .frame(width: screenSize.width * 0.9, height: screenSize.height * 0.5, alignment: .topLeading)
+//        .frame(width: screenSize.width * 0.9, height: screenSize.height * 0.5, alignment: .topLeading)
+        .padding(.horizontal, isIPad ? screenSize.width * 0.073 : screenSize.width * 0.025)
     }
 }
 
