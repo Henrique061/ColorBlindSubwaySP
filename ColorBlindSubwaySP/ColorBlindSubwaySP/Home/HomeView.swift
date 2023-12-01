@@ -31,7 +31,8 @@ struct HomeView: View {
                                     Text("Filtros")
                                 }.sheet(isPresented: $showingFilterSheet, content: {
                                     FilterView(setFilter: mapViewModel.setFilter)
-                                        .presentationDetents([.medium, .large])
+                                        .presentationDetents([.fraction(0.40)])
+                                        .presentationDragIndicator(.visible)
                                 })
                             }
                             Spacer()
