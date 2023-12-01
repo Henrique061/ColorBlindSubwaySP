@@ -48,6 +48,7 @@ struct HomeView: View {
                                 ColorView(mapVm: mapViewModel)
                                     .presentationDetents([.medium, .large])
                                     .presentationDetents([.fraction(0.75)])
+                                    .presentationDragIndicator(.visible)
                             })
                             Spacer()
                                 .padding()
@@ -64,6 +65,7 @@ struct HomeView: View {
                                 FocusView(mapVm: mapViewModel)
                                     .presentationDetents([.medium, .large])
                                     .presentationDetents([.fraction(0.75)])
+                                    .presentationDragIndicator(.visible)
                             }
                             Spacer()
                                 .frame(width: 5)
