@@ -11,7 +11,8 @@ struct FilterView: View {
     @Environment(\.screenSize) var screenSize
     let isIPad = UIDevice.current.userInterfaceIdiom == .pad
     
-    var setFilter: ([LineCase:Color])->Void
+//    var setFilter: ([LineCase:Color])->Void
+    var mapViewModel : MapViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,48 +22,63 @@ struct FilterView: View {
             
             HStack(spacing: 45){
                 Button(action: {
-                    setFilter(StandardFilters.originalColors)
+                    mapViewModel.setFilter(filter: StandardFilters.originalColors)
                 }, label: {
-                    FilterComponent(filterColor: Color("original"), filterName: "Sem filtro")
+                    FilterComponent(
+                        filterColor: Color("original"),
+                        filterName: "Sem filtro",
+                        hasBorder: StandardFilters.originalColors == mapViewModel.linesColors)
                 })
                 Button(action: {
-                    setFilter(StandardFilters.deuteranopia)
+                    mapViewModel.setFilter(filter: StandardFilters.deuteranopia)
                 }, label: {
-                    FilterComponent(filterColor: Color("deuteranopia"), filterName: "Deuteranopia")
+                    FilterComponent(
+                        filterColor: Color("deuteranopia"),
+                        filterName: "Deuteranopia",
+                        hasBorder: StandardFilters.deuteranopia == mapViewModel.linesColors)
                 })
                 Button(action: {
-                    setFilter(StandardFilters.protanopia)
+                    mapViewModel.setFilter(filter: StandardFilters.protanopia)
                 }, label: {
-                    FilterComponent(filterColor: Color("protanopia"), filterName: "Protanopia")
+                    FilterComponent(
+                        filterColor: Color("protanopia"),
+                        filterName: "Protanopia",
+                        hasBorder: StandardFilters.protanopia == mapViewModel.linesColors)
                 })
             }
-//            .frame(width: screenSize.width * 0.9, alignment: .leading)
             .padding(.horizontal, isIPad ? screenSize.width * -0.040 : screenSize.width * 0.007)
 
             HStack(spacing: 45){
                 Button(action: {
-                    setFilter(StandardFilters.tritanopia)
+                    mapViewModel.setFilter(filter: StandardFilters.tritanopia)
                 }, label: {
-                    FilterComponent(filterColor: Color("tritanopia"), filterName: "Tritanopia")
+                    FilterComponent(
+                        filterColor: Color("tritanopia"),
+                        filterName: "Tritanopia",
+                        hasBorder: StandardFilters.tritanopia == mapViewModel.linesColors)
                 })
                 Button(action: {
-                    setFilter(StandardFilters.acromatopsia)
+                    mapViewModel.setFilter(filter: StandardFilters.acromatopsia)
                 }, label: {
-                    FilterComponent(filterColor: Color("acromatopsia"), filterName: "Acromatopsia")
+                    FilterComponent(
+                        filterColor: Color("acromatopsia"),
+                        filterName: "Acromatopsia",
+                        hasBorder: StandardFilters.deuteranopia == mapViewModel.linesColors)
                 })
                 
                 if UserDefaults.standard.object(forKey: UserDefaultsPresets.presetPersonalizadoKey) != nil {
                     Button(action: {
-                        setFilter(UserDefaultsPresets.recuperarPresetSalvo(key: UserDefaultsPresets.presetPersonalizadoKey))
+                        mapViewModel.setFilter(filter: UserDefaultsPresets.recuperarPresetSalvo(key: UserDefaultsPresets.presetPersonalizadoKey))
                     }, label: {
-                        FilterComponent(filterColor: Color("meuFiltro"), filterName: "Meu filtro")
+                        FilterComponent(
+                            filterColor: Color("meuFiltro"),
+                            filterName: "Meu filtro",
+                            hasBorder: StandardFilters.deuteranopia == mapViewModel.linesColors)
                     })
                 }
             }
-            //.frame(width: screenSize.width * 0.9, alignment: .leading)
             .padding(.horizontal, isIPad ? screenSize.width * -0.040 : screenSize.width * 0.007)
         }
-//        .frame(width: screenSize.width * 0.9, height: screenSize.height * 0.5, alignment: .topLeading)
         .padding(.horizontal, isIPad ? screenSize.width * 0.073 : screenSize.width * 0.025)
     }
 }

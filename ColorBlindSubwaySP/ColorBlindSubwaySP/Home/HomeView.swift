@@ -30,7 +30,7 @@ struct HomeView: View {
                                     Image(systemName: "camera.filters")
                                     Text("Filtros")
                                 }.sheet(isPresented: $showingFilterSheet, content: {
-                                    FilterView(setFilter: mapViewModel.setFilter)
+                                    FilterView(mapViewModel: mapViewModel)
                                         .presentationDetents([.fraction(0.40)])
                                         .presentationDragIndicator(.visible)
                                 })
