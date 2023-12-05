@@ -23,65 +23,77 @@ struct HomeView: View {
                 MapView(mapVm: mapViewModel)
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
-                            Button {
-                                showingFilterSheet.toggle()
-                            } label: {
-                                VStack {
-                                    Image(systemName: "camera.filters")
-                                    Text("Filtros")
-                                }.sheet(isPresented: $showingFilterSheet, content: {
-                                    FilterView(setFilter: mapViewModel.setFilter)
+                            HStack(spacing: 70) {
+                                Button {
+                                    showingFilterSheet.toggle()
+                                } label: {
+                                    VStack {
+                                        Image(systemName: "camera.filters")
+                                        Text("Filtros")
+                                    }.sheet(isPresented: $showingFilterSheet, content: {
+                                        FilterView(setFilter: mapViewModel.setFilter)
+                                            .presentationDetents([.medium, .large])
+                                    })
+                                }
+                                Button {
+                                    showingColorSheet.toggle()
+                                } label: {
+                                    VStack {
+                                        Image(systemName: "scribble.variable")
+                                        Text("Cores")
+                                    }
+                                }.sheet(isPresented: $showingColorSheet, content: {
+                                    ColorView(mapVm: mapViewModel)
                                         .presentationDetents([.medium, .large])
+                                        .presentationDetents([.fraction(0.75)])
                                 })
-                            }
-                            Spacer()
-                                .frame(width: 5)
-                            
-                            Button {
-                                showingColorSheet.toggle()
-                            } label: {
-                                VStack {
-                                    Image(systemName: "scribble.variable")
-                                    Text("Cores")
-                                }
-                            }.sheet(isPresented: $showingColorSheet, content: {
-                                ColorView(mapVm: mapViewModel)
-                                    .presentationDetents([.medium, .large])
-                                    .presentationDetents([.fraction(0.75)])
-                            })
-                            Spacer()
-                                .padding()
-                                .frame(width: 5)
-                            
-                            Button {
-                                showingFocusSheet.toggle()
-                            } label: {
-                                VStack {
-                                    Image(systemName: "tram.circle.fill")
-                                    Text("Foco")
-                                }
-                            }.sheet(isPresented: $showingFocusSheet) {
-                                FocusView(mapVm: mapViewModel)
-                                    .presentationDetents([.medium, .large])
-                                    .presentationDetents([.fraction(0.75)])
-                            }
-                            Spacer()
-                                .frame(width: 5)
-                            NavigationLink {
-                                InfoView()
-                            } label: {
-                                VStack {
-                                    Image(systemName: "info.circle")
-                                    Text("Infos")
+                                Button {
+                                    showingFocusSheet.toggle()
+                                } label: {
+                                    VStack {
+                                        Image(systemName: "binoculars")
+                                        Text("Foco")
+                                    }
+                                }.sheet(isPresented: $showingFocusSheet) {
+                                    FocusView(mapVm: mapViewModel)
+                                        .presentationDetents([.medium, .large])
+                                        .presentationDetents([.fraction(0.75)])
                                 }
                             }
                         }
+                        ToolbarItem(placement: ToolbarItemPlacement.topBarTrailing) {
+                            NavigationLink {
+                                InfoView()
+                            } label: {
+                                Image(systemName: "info.circle")
+                            }
+                        }
                     }
+                    .navigationBarBackground()
             }
-        } 
+        }
+    }
+    
+}
+extension View {
+    func navigationBarBackground(_ background: Color = .gray) -> some View {
+        return self
+            .modifier(ColoredNavigationBar(background: background))
     }
 }
 
+struct ColoredNavigationBar: ViewModifier {
+    var background: Color
+    
+    func body(content: Content) -> some View {
+        content
+            .toolbarBackground(
+                background,
+                for: .bottomBar
+            )
+            .toolbarBackground(.visible, for: .navigationBar)
+    }
+}
 //#Preview {
 //    HomeView()
 //}
