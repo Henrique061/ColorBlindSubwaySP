@@ -9,11 +9,15 @@ import SwiftUI
 
 struct SobreView: View {
     var body: some View {
-        Text("""
-        Este app foi desenvolvido de forma a auxiliar pessoas daltônicas e pessoas de baixa visão, através das cores, a visualizar o mapa do metrô de São Paulo - SP.
-        """)
-        .multilineTextAlignment(.leading)
+        VStack {
+            Text("""
+            Este app foi desenvolvido de forma a auxiliar pessoas daltônicas e pessoas de baixa visão, através das cores, a visualizar o mapa do metrô de São Paulo - SP.
+            """)
+            .multilineTextAlignment(.leading)
         .padding(20)
+        Spacer()
+        }.navigationTitle("Sobre")
+        
     }
 }
 
