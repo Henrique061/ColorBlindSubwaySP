@@ -19,61 +19,68 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            GeometryReader { geo in
-                MapView(mapVm: mapViewModel)
-                    .toolbar {
-                        ToolbarItemGroup(placement: .bottomBar) {
-                            HStack(spacing: 70) {
-                                Button {
-                                    showingFilterSheet.toggle()
-                                } label: {
-                                    VStack {
-                                        Image(systemName: "camera.filters")
-                                        Text("Filtros")
-                                    }.sheet(isPresented: $showingFilterSheet, content: {
-                                        FilterView(setFilter: mapViewModel.setFilter)
-                                            .presentationDetents([.fraction(0.40)])
+            ZStack {
+                GeometryReader { geo in
+                    MapView(mapVm: mapViewModel)
+                        .toolbar {
+                            ToolbarItemGroup(placement: .bottomBar) {
+                                HStack(spacing: 70) {
+                                    Button {
+                                        showingFilterSheet.toggle()
+                                    } label: {
+                                        VStack {
+                                            Image(systemName: "camera.filters")
+                                            Text("Filtros")
+                                        }.sheet(isPresented: $showingFilterSheet, content: {
+                                            FilterView(setFilter: mapViewModel.setFilter)
+                                                .presentationDetents([.fraction(0.40)])
+                                                .presentationDragIndicator(.visible)
+                                        })
+                                    }
+                                    Button {
+                                        showingColorSheet.toggle()
+                                    } label: {
+                                        VStack {
+                                            Image(systemName: "scribble.variable")
+                                            Text("Cores")
+                                        }
+                                    }.sheet(isPresented: $showingColorSheet, content: {
+                                        ColorView(mapVm: mapViewModel)
+                                            .presentationDetents([.medium, .large])
+                                            .presentationDetents([.fraction(0.75)])
                                             .presentationDragIndicator(.visible)
                                     })
+                                    Button {
+                                        showingFocusSheet.toggle()
+                                    } label: {
+                                        VStack {
+                                            Image(systemName: "binoculars")
+                                            Text("Foco")
+                                        }
+                                    }.sheet(isPresented: $showingFocusSheet) {
+                                        FocusView(mapVm: mapViewModel)
+                                            .presentationDetents([.medium, .large])
+                                            .presentationDetents([.fraction(0.75)])
+                                            .presentationDragIndicator(.visible)
+                                    }
                                 }
-                                Button {
-                                    showingColorSheet.toggle()
+                            }
+                            ToolbarItem(placement: ToolbarItemPlacement.topBarTrailing) {
+                                NavigationLink {
+                                    InfoView()
                                 } label: {
-                                    VStack {
-                                        Image(systemName: "scribble.variable")
-                                        Text("Cores")
-                                    }
-                                }.sheet(isPresented: $showingColorSheet, content: {
-                                    ColorView(mapVm: mapViewModel)
-                                        .presentationDetents([.medium, .large])
-                                        .presentationDetents([.fraction(0.75)])
-                                        .presentationDragIndicator(.visible)
-                                })
-                                Button {
-                                    showingFocusSheet.toggle()
-                                } label: {
-                                    VStack {
-                                        Image(systemName: "binoculars")
-                                        Text("Foco")
-                                    }
-                                }.sheet(isPresented: $showingFocusSheet) {
-                                    FocusView(mapVm: mapViewModel)
-                                        .presentationDetents([.medium, .large])
-                                        .presentationDetents([.fraction(0.75)])
-                                        .presentationDragIndicator(.visible)
+                                    Image(systemName: "info.circle")
                                 }
                             }
                         }
-                        ToolbarItem(placement: ToolbarItemPlacement.topBarTrailing) {
-                            NavigationLink {
-                                InfoView()
-                            } label: {
-                                Image(systemName: "info.circle")
-                            }
-                        }
-                    }
-                    .navigationBarBackground()
-            }
+                        .navigationBarBackground()
+                }
+            }.safeAreaInset(edge: .bottom) {
+                Color.clear
+                    .frame(height: 0)
+                    .background(.bar)
+                    .border(.black)
+            }.navigationBarTitleDisplayMode(.inline)
         }
     }
     
